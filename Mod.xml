@@ -1,0 +1,11 @@
+<Header>
+  <Name>Evolution Item Trader</Name>
+  <Author>FlowerSnek</Author>
+  <Description>Adds a shop to the Base Camp where you can trade evolution items.</Description>
+  <Namespace>evolution_item_trader</Namespace>
+  <UUID>0924B668-DFF8-4689-9FC4-CEB4883B00E4</UUID>
+  <Version>0.1</Version>
+  <GameVersion>0.0</GameVersion>
+  <ModType>Mod</ModType>
+  <Relationships />
+</Header>
