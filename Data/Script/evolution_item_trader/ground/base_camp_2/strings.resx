@@ -1,203 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
+	<!-- 
+		Microsoft ResX Schema 
+		
+		Version 2.0
+		
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+		
+		Example:
+		
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">2.0</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+				<value>[base64 mime encoded serialized .NET Framework object]</value>
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+				<value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+				<comment>This is a comment</comment>
+		</data>
+								
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+		
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+		
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+		
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+		
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value	 : The object must be serialized with 
+						: System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+						: and then encoded with base64 encoding.
+		
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value	 : The object must be serialized with 
+						: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+						: and then encoded with base64 encoding.
 
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  
-  <data name="Evoshop_Quest_Intro" xml:space="preserve">
-    <value>[tmp] Go rescue Eevee from Depleted Basin.</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Quest_Given" xml:space="preserve">
-    <value>[tmp] I'm waiting for you to rescue Eevee from Depleted Basin.</value>
-    <comment></comment>  </data>
-  
-  <data name="Evoshop_Buyer_Intro" xml:space="preserve">
-    <value>[tmp] I'll buy your evolution items and give you Heart Scales.</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Intro_Return" xml:space="preserve">
-    <value>[tmp] I'll buy your evolution items and give you Heart Scales. (Return)</value>
-    <comment></comment>  </data>
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value	 : The object must be serialized into a byte array 
+						: using a System.ComponentModel.TypeConverter
+						: and then encoded with base64 encoding.
+		-->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
 	
-  <data name="Evoshop_Buyer_Bag_Empty" xml:space="preserve">
-    <value>Oh?[pause=0] Nothing to sell?</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Bag_Full" xml:space="preserve">
-    <value>Oh![pause=0] You have no more space for items!</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Goodbye" xml:space="preserve">
-    <value>Thanks! \u266A Please come again \u266A</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Info" xml:space="preserve">
-    <value>This shop specializes in selling items!</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Option_Sell" xml:space="preserve">
-    <value>Sell</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Sell" xml:space="preserve">
-    <value>Very well! What will you sell? (You can use {0} to choose multiple items.)</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Sell_Complete" xml:space="preserve">
-    <value>Done deal! Thank you~\u266A</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Sell_Multi" xml:space="preserve">
-    <value>[tmp] I can give you {0} Heart Scales for all that.</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Buyer_Sell_One" xml:space="preserve">
-    <value>[tmp] I can give you {0} Heart Scales for that {1}.</value>
-    <comment></comment>  </data>
+	<data name="Evoshop_Quest_Intro" xml:space="preserve">
+		<value>[tmp] Go rescue Eevee from Depleted Basin.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Given" xml:space="preserve">
+		<value>[tmp] I'm waiting for you to rescue Eevee from Depleted Basin.</value>
+		<comment></comment>	</data>
+	
+	<data name="Evoshop_Quest_Complete_Brother_1" xml:space="preserve">
+		<value>[tmp] I speak, surprised, about how my sister changed so much.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Sister_1" xml:space="preserve">
+		<value>[tmp] I mention that I had to use the Ice Stone to evolve and fend off wild Pokémon.[br][tmp] I apologize for having used it.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Brother_2" xml:space="preserve">
+		<value>[tmp] I say it's okay, and that it's better for you to have used it and survived.[br][tmp] I ask if you have any other evolution stones.[br][tmp] I say that I don't want you to have to go back to Depleted Basin and risk your life to get me an Ice Stone.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Sister_2" xml:space="preserve">
+		<value>[tmp] I say that I have a few, including a Fire Stone.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Brother_3" xml:space="preserve">
+		<value>[tmp] I ask you to give me the Fire Stone.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Brother_4" xml:space="preserve">
+		<value>[tmp] I say that I am a Flareon now.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Brother_5" xml:space="preserve">
+		<value>[tmp] I thank the player for having rescued my sister, but lament that we're now stuck as the wrong evolutions.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Sister_3" xml:space="preserve">
+		<value>[tmp] I propose that we find a way to prevent what happened to us from happening to other Pokémon.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Brother_6" xml:space="preserve">
+		<value>[tmp] I ask what she means.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Sister_4" xml:space="preserve">
+		<value>[tmp] I say that we trade evolution items with other Pokémon so they get the ones they need.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Quest_Complete_Brother_7" xml:space="preserve">
+		<value>[tmp] I agree and say that the Evolution Swap Shop is now open for business.</value>
+		<comment></comment>	</data>
+	
+	<data name="Evoshop_Buyer_Intro" xml:space="preserve">
+		<value>[tmp] I'll buy your evolution items and give you Heart Scales.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Intro_Return" xml:space="preserve">
+		<value>[tmp] I'll buy your evolution items and give you Heart Scales. (Return)</value>
+		<comment></comment>	</data>
+	
+	<data name="Evoshop_Buyer_Bag_Empty" xml:space="preserve">
+		<value>Oh?[pause=0] Nothing to sell?</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Bag_Full" xml:space="preserve">
+		<value>Oh![pause=0] You have no more space for items!</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Goodbye" xml:space="preserve">
+		<value>Thanks! \u266A Please come again \u266A</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Info" xml:space="preserve">
+		<value>This shop specializes in selling items!</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Option_Sell" xml:space="preserve">
+		<value>Sell</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Sell" xml:space="preserve">
+		<value>Very well! What will you sell? (You can use {0} to choose multiple items.)</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Sell_Complete" xml:space="preserve">
+		<value>Done deal! Thank you~\u266A</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Sell_Multi" xml:space="preserve">
+		<value>[tmp] I can give you {0} Heart Scales for all that.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Sell_One" xml:space="preserve">
+		<value>[tmp] I can give you {0} Heart Scales for that {1}.</value>
+		<comment></comment>	</data>
 
-  <data name="Evoshop_Seller_Intro" xml:space="preserve">
-    <value>[tmp] I'll sell you evolution items in exchange for Heart Scales.</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Intro_Return" xml:space="preserve">
-    <value>[tmp] I'll sell you evolution items in exchange for Heart Scales. (Return)</value>
-    <comment></comment>  </data>
+	<data name="Evoshop_Seller_Intro" xml:space="preserve">
+		<value>[tmp] I'll sell you evolution items in exchange for Heart Scales.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Intro_Return" xml:space="preserve">
+		<value>[tmp] I'll sell you evolution items in exchange for Heart Scales. (Return)</value>
+		<comment></comment>	</data>
 	
-  <data name="Evoshop_Seller_Bag_Empty" xml:space="preserve">
-    <value>Oh?[pause=0] Nothing to sell?</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Bag_Full" xml:space="preserve">
-    <value>Oh![pause=0] You have no more space for items!</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Buy" xml:space="preserve">
-    <value>Very well![pause=0] Feel free to examine my merchandise! (You can use {0} to choose multiple items.)</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Buy_Complete" xml:space="preserve">
-    <value>Thank you! All yours~</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Buy_Empty" xml:space="preserve">
-    <value>I'm sold out.[pause=0] Please forgive me.[pause=0] I will have new merchandise tomorrow!</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Buy_Multi" xml:space="preserve">
-    <value>Altogether, that comes to {0} Heart Scales. Is that OK?</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Buy_No_Money" xml:space="preserve">
-    <value>What?[pause=0] You don't seem to have the money.</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Buy_One" xml:space="preserve">
-    <value>That {1}? That will be {0} Heart Scales.</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Goodbye" xml:space="preserve">
-    <value>Thanks! \u266A Please come again \u266A</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Info" xml:space="preserve">
-    <value>This shop specializes in selling items!</value>
-    <comment></comment>  </data>
-  <data name="Evoshop_Seller_Option_Buy" xml:space="preserve">
-    <value>Buy</value>
-    <comment></comment>  </data>
+	<data name="Evoshop_Seller_Bag_Empty" xml:space="preserve">
+		<value>Oh?[pause=0] Nothing to sell?</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Bag_Full" xml:space="preserve">
+		<value>Oh![pause=0] You have no more space for items!</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Buy" xml:space="preserve">
+		<value>Very well![pause=0] Feel free to examine my merchandise! (You can use {0} to choose multiple items.)</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Buy_Complete" xml:space="preserve">
+		<value>Thank you! All yours~</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Buy_Empty" xml:space="preserve">
+		<value>I'm sold out.[pause=0] Please forgive me.[pause=0] I will have new merchandise tomorrow!</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Buy_Multi" xml:space="preserve">
+		<value>Altogether, that comes to {0} Heart Scales. Is that OK?</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Buy_No_Money" xml:space="preserve">
+		<value>What?[pause=0] You don't seem to have the money.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Buy_One" xml:space="preserve">
+		<value>That {1}? That will be {0} Heart Scales.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Goodbye" xml:space="preserve">
+		<value>Thanks! \u266A Please come again \u266A</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Info" xml:space="preserve">
+		<value>This shop specializes in selling items!</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Option_Buy" xml:space="preserve">
+		<value>Buy</value>
+		<comment></comment>	</data>
 </root>

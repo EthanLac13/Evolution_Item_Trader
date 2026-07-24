@@ -93,11 +93,14 @@ end
 
 function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 	-- 712, 592
+	local flareon = base_camp_2_evoshop.SpawnPokemon("flareon", 0, "normal", Gender.Male, 712, 592, Direction.Down, "EvolutionShopItemBuyer")
+	local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 592, Direction.Down, "EvolutionShopItemSeller")
 	
-	if SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued then
-		local flareon = base_camp_2_evoshop.SpawnPokemon("flareon", 0, "normal", Gender.Male, 712, 592, Direction.Down, "EvolutionShopItemBuyer")
-		local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 592, Direction.Down, "EvolutionShopItemSeller")
-	else
+	if not SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued then
+		
+		GROUND:Hide("EvolutionShopItemBuyer")
+		GROUND:Hide("EvolutionShopItemSeller")
+		
 		local eevee = base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Male, 712, 592, Direction.Down, "EvolutionShopQuestGiver")
 		
 		-- Only spawn Glaceon if the quest is complete
@@ -110,6 +113,7 @@ function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 				local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 592, Direction.Left, "EvolutionShopQuestTarget")
 			end
 		end
+		
 	end
 end
 
@@ -127,7 +131,7 @@ function base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
 		-- Create mission and add it to active missions
 		COMMON.CreateMission(questname,
 			{ Complete = COMMON.MISSION_INCOMPLETE, Type = COMMON.SIDEQUEST_TYPE_RESCUE,
-			DestZone = "depleted_basin", DestSegment = 0, DestFloor = 8,
+			DestZone = "depleted_basin", DestSegment = 0, DestFloor = 6,
 			FloorUnknown = false,
 			TargetSpecies = RogueEssence.Dungeon.MonsterID("glaceon", 0, "normal", Gender.Female),
 			ClientSpecies = RogueEssence.Dungeon.MonsterID("eevee", 0, "normal", Gender.Male) }
@@ -136,10 +140,12 @@ function base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
 		
 	else
 		
-		if quest.Complete == COMMON.MISSION_INCOMPLETE then
-			UI:WaitShowDialogue(STRINGS.MapStrings['Evoshop_Quest_Given'])
-		else
-			base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
+		if not SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued then
+			if quest.Complete == COMMON.MISSION_INCOMPLETE then
+				UI:WaitShowDialogue(STRINGS.MapStrings['Evoshop_Quest_Given'])
+			else
+				base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
+			end
 		end
 		
 	end
@@ -148,7 +154,21 @@ end
 
 function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	
+	-- Set quest as complete
 	COMMON.CompleteMission("Evolution_Item_Trader_Quest")
+	SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued = true
+	
+	GAME:FadeOut(false, 20)
+	
+	-- Hide old quest NPCs
+	GROUND:Hide("EvolutionShopQuestGiver")
+	GROUND:Hide("EvolutionShopQuestTarget")
+	
+	-- Spawn shop NPCs
+	GROUND:Unhide("EvolutionShopItemBuyer")
+	GROUND:Unhide("EvolutionShopItemSeller")
+	
+	GAME:FadeIn(20)
 	
 end
 
@@ -269,7 +289,7 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 			local shop_choices = {STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Option_Buy']),
 			STRINGS:FormatKey("MENU_INFO"),
 			STRINGS:FormatKey("MENU_EXIT")}
-			UI:BeginChoiceMenu(msg, shop_choices, 1, 4)
+			UI:BeginChoiceMenu(msg, shop_choices, 1, 3)
 			UI:WaitForChoice()
 			local result = UI:ChoiceResult()
 			repeated = true
@@ -277,17 +297,6 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy'], STRINGS:LocalKeyString(26)))
 				state = 1
 			elseif result == 2 then
-				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
-				if bag_count > 0 then
-					--TODO: use the enum instead of a hardcoded number
-					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Sell'], STRINGS:LocalKeyString(26)))
-					state = 3
-				else
-					UI:SetSpeakerEmotion("Angry")
-					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Bag_Empty']))
-					UI:SetSpeakerEmotion("Normal")
-				end
-			elseif result == 3 then
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_001']))
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_002']))
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_003']))
@@ -299,7 +308,6 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 			end
 		elseif state == 1 then
 			local result = EvolutionItemSaleMenu.run("Purchase Evolution Items", true, "Confirm", items_to_buy)
-			print(result[1].Index)
 			if #result > 0 then
 				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
 				local bag_cap = GAME:GetPlayerBagLimit()
@@ -337,7 +345,7 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 				state = 1
 			else
 				if #cart == 1 then
-					local name = catalog[cart[1]].Item:GetDisplayName()
+					local name = RogueEssence.Dungeon.InvItem(cart[1].Index):GetDisplayName()
 					msg = STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy_One'], STRINGS:FormatKey("MONEY_AMOUNT", total), name)
 				else
 					msg = STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy_Multi'], STRINGS:FormatKey("MONEY_AMOUNT", total))
@@ -347,17 +355,18 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 				result = UI:ChoiceResult()
 				
 				if result then
-					GAME:RemoveFromPlayerMoney(total)
+					-- Take Heart Scales from the player's bag
+					for ii = 1, total, 1 do
+						local item_slot = GAME:FindPlayerItem("loot_heart_scale", true, true)
+						GAME:TakePlayerBagItem(item_slot.Slot, false)
+					end
+					-- Give items
 					for ii = 1, #cart, 1 do
-						local item = catalog[cart[ii]].Item
-						GAME:GivePlayerItem(item.ID, item.Amount, false)
+						local item = RogueEssence.Dungeon.InvItem(cart[1].Index, false, cart[1].Amount)
+						GAME:GivePlayerItem(item)
 					end
-					for ii = #cart, 1, -1 do
-						table.remove(catalog, cart[ii])
-						table.remove(SV.base_shop, cart[ii])
-					end
-					
 					cart = {}
+					
 					SOUND:PlayBattleSE("DUN_Money")
 					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy_Complete']))
 					state = 0
