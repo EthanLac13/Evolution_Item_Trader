@@ -11,12 +11,21 @@ function base_camp_2.Init(map)
 	-- Initialize save data
 	if SV.ModData_EvolutionItemTrader == nil then
 		print("Initializing savevars")
-		SV.ModData_EvolutionItemTrader = {
-			Initialized = true,
-			
-			Quest_Given = false,
-			Shopkeeper_Rescued = false
-		}
+		if SV.Experimental then
+			SV.ModData_EvolutionItemTrader = {
+				Initialized = true,
+				
+				Quest_Given = false,
+				Shopkeeper_Rescued = false
+			}
+		else
+			SV.ModData_EvolutionItemTrader = {
+				Initialized = true,
+				
+				Quest_Given = true,
+				Shopkeeper_Rescued = true
+			}
+		end
 	else
 		print("Savevars already initialized")
 	end
