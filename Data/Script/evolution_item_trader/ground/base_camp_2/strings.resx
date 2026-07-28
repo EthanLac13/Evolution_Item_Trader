@@ -211,13 +211,13 @@
 		<value>[tmp] Thank you! All yours~</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Buy_Multi" xml:space="preserve">
-		<value>[tmp] Altogether, that comes to {0} Heart Scales. Is that OK?</value>
+		<value>[tmp] Altogether, that comes to [color=#00FFFF]{0}[color] Heart Scales. Is that OK?</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Buy_No_Money" xml:space="preserve">
 		<value>[tmp] What?[pause=0] You don't seem to have the money.</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Buy_One" xml:space="preserve">
-		<value>[tmp] That {1}? That will be {0} Heart Scales.</value>
+		<value>[tmp] That {1}? That will be [color=#00FFFF]{0}[color] Heart Scales.</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Goodbye" xml:space="preserve">
 		<value>[tmp] Thanks! \u266A Please come again \u266A</value>

@@ -434,9 +434,9 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 			else
 				if #cart == 1 then
 					local name = RogueEssence.Dungeon.InvItem(cart[1].Index):GetDisplayName()
-					msg = STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy_One'], STRINGS:FormatKey("MONEY_AMOUNT", total), name)
+					msg = STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy_One'], total, name)
 				else
-					msg = STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy_Multi'], STRINGS:FormatKey("MONEY_AMOUNT", total))
+					msg = STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy_Multi'], total)
 				end
 				UI:ChoiceMenuYesNo(msg, false)
 				UI:WaitForChoice()
