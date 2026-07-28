@@ -126,6 +126,7 @@ function base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
 	
 	if not SV.ModData_EvolutionItemTrader.QuestGiven then
 		
+		GROUND:CharTurnToChar(obj, activator)
 		UI:WaitShowDialogue(STRINGS.MapStrings['Evoshop_Quest_Intro'])
 		
 		-- Create mission and add it to active missions
@@ -142,6 +143,7 @@ function base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
 		
 		if not SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued then
 			if quest.Complete == COMMON.MISSION_INCOMPLETE then
+				GROUND:CharTurnToChar(obj, activator)
 				UI:WaitShowDialogue(STRINGS.MapStrings['Evoshop_Quest_Given'])
 			else
 				base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
@@ -154,9 +156,94 @@ end
 
 function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	
-	-- Set quest as complete
-	COMMON.CompleteMission("Evolution_Item_Trader_Quest")
-	SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued = true
+	local player = CH("PLAYER")
+	local brother = CH("EvolutionShopQuestGiver")
+	local sister = CH("EvolutionShopQuestTarget")
+	
+	GAME:CutsceneMode(true)
+	GAME:FadeOut(false, 20)
+	
+	-- Set NPC positions
+	GROUND:TeleportTo(player, 724, 624, Direction.Up)
+	GAME:WaitFrames(20)
+	
+	GAME:FadeIn(20)
+	
+	UI:SetSpeaker(brother)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Brother_1"])
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(sister)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Sister_1"])
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(brother)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Brother_2"])
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(sister)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Sister_2"])
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(brother)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Brother_3"])
+	GAME:WaitFrames(10)
+	
+	GROUND:MoveToPosition(sister, sister.Position.X - 8, sister.Position.Y, false, 0.5)
+	GAME:WaitFrames(10)
+	SOUND:PlayBattleSE("EVT_CH02_Box_Open")
+	GAME:WaitFrames(30)
+	GROUND:AnimateToPosition(sister, "Walk", Dir8.Left, sister.Position.X + 8, sister.Position.Y, 1.0, 0.5, 0)
+	GAME:WaitFrames(5)
+	
+	GROUND:CharAnimateTurnTo(brother, Direction.Up, 4)
+	GROUND:MoveToPosition(brother, brother.Position.X - 4, brother.Position.Y - 12, false, 1.5)
+	GROUND:MoveToPosition(brother, brother.Position.X - 12, brother.Position.Y - 12, false, 1.5)
+	GROUND:MoveToPosition(brother, brother.Position.X - 160, brother.Position.Y, false, 1.5)
+	GAME:WaitFrames(60)
+	
+	SOUND:PlayBattleSE("EVT_Evolution_Start")
+	brother.Data.BaseForm = MonsterID("flareon", 0, "normal", Gender.Male)
+	brother.Data.Nickname = _DATA:GetMonster("flareon").Name:ToLocal()
+	
+	GAME:WaitFrames(90)
+	
+	GROUND:MoveToPosition(brother, brother.Position.X + 176, brother.Position.Y + 24, false, 1.5)
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(brother)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Brother_4"])
+	GAME:WaitFrames(10)
+	
+	GROUND:CharAnimateTurn(brother, Direction.Down, 4, false)
+	GAME:WaitFrames(5)
+	GROUND:CharAnimateTurn(sister, Direction.Down, 4, true)
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(brother)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Brother_5"])
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(sister)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Sister_3"])
+	GAME:WaitFrames(10)
+	
+	GROUND:CharTurnToCharAnimated(brother, sister, 4)
+	GAME:WaitFrames(5)
+	GROUND:CharTurnToCharAnimated(sister, brother, 4)
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(brother)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Brother_6"])
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(sister)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Sister_4"])
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(brother)
+	UI:WaitShowDialogue(STRINGS.MapStrings["Evoshop_Quest_Complete_Brother_7"])
+	GAME:WaitFrames(10)
 	
 	GAME:FadeOut(false, 20)
 	
@@ -167,6 +254,11 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	-- Spawn shop NPCs
 	GROUND:Unhide("EvolutionShopItemBuyer")
 	GROUND:Unhide("EvolutionShopItemSeller")
+	
+	-- Set quest as complete and end cutscene
+	COMMON.CompleteMission("Evolution_Item_Trader_Quest")
+	SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued = true
+	GAME:CutsceneMode(false)
 	
 	GAME:FadeIn(20)
 	
@@ -297,11 +389,7 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy'], STRINGS:LocalKeyString(26)))
 				state = 1
 			elseif result == 2 then
-				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_001']))
-				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_002']))
-				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_003']))
-				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_004']))
-				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_005']))
+				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info']))
 			else
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Goodbye']))
 				state = -1
