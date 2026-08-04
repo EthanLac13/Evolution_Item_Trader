@@ -92,7 +92,8 @@ function base_camp_2_evoshop.SpawnPokemon(species, form, skin, gender, x, y, dir
 end
 
 function base_camp_2_evoshop.Spawn_Shopkeepers(map)
-	-- 712, 592
+	
+	-- Create shopkeepers
 	local flareon = base_camp_2_evoshop.SpawnPokemon("flareon", 0, "normal", Gender.Male, 712, 592, Direction.Down, "EvolutionShopItemBuyer")
 	local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 592, Direction.Down, "EvolutionShopItemSeller")
 	
@@ -115,6 +116,13 @@ function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 		end
 		
 	end
+	
+	-- Create shop stall
+	animation_data = RogueEssence.Content.ObjAnimData("FRLG_Market_Stall", 60)
+	shop_stall_obj = RogueEssence.Ground.GroundObject(animation_data, Dir8.None, Rect(0, 32, 96, 32), RogueElements.Loc(0, 48), true, "EvolutionShopStall")
+	shop_stall_obj.MapLoc = RogueElements.Loc(684, 560)
+	GAME:GetCurrentGround():AddTempObject(shop_stall_obj)
+	
 end
 
 

@@ -1,0 +1,114 @@
+﻿{
+"Version": "0.8.12.0",
+"Object": {
+"$type": "System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib],[RogueEssence.Data.EntrySummary, RogueEssence]], System.Private.CoreLib",
+"bramble_woods": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"ExpPercent": 100,
+"Level": 10,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"KeepTreasure": false,
+"BagSize": -1,
+"Rescues": 2,
+"CountedFloors": 8,
+"Rogue": 1,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+],
+[
+0,
+1,
+2
+],
+null,
+null
+],
+"Name": {
+"DefaultText": "Bramble Woods",
+"LocalTexts": {
+"fr": "Bosquet Épineux",
+"de": "Brombeerwald",
+"es": "Bosque Zarza",
+"it": "Foresta Rovospino",
+"ko": "가시나무 숲",
+"ja": "いばらのもり",
+"ja-jp": "いばらの森",
+"zh-hans": "荆棘树林"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+},
+"depleted_basin": {
+"$type": "RogueEssence.Data.ZoneEntrySummary, RogueEssence",
+"ExpPercent": 60,
+"Level": 25,
+"LevelCap": false,
+"KeepSkills": false,
+"TeamRestrict": false,
+"TeamSize": -1,
+"MoneyRestrict": false,
+"BagRestrict": -1,
+"KeepTreasure": false,
+"BagSize": -1,
+"Rescues": 2,
+"CountedFloors": 11,
+"Rogue": 1,
+"Grounds": [],
+"Maps": [
+[
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9
+],
+[
+0,
+1,
+2,
+3
+],
+null,
+null,
+null,
+[
+0
+]
+],
+"Name": {
+"DefaultText": "Depleted Basin",
+"LocalTexts": {
+"fr": "Bassin Vidé",
+"ko": "고갈된 분지",
+"ja": "ハテアレぼんち",
+"ja-jp": "ハテアレ盆地",
+"zh-hans": "枯竭盆地"
+}
+},
+"Released": true,
+"Comment": "",
+"SortOrder": 0
+}
+}
+}
