@@ -67,7 +67,7 @@ null
 "KeepTreasure": false,
 "BagSize": -1,
 "Rescues": 2,
-"CountedFloors": 11,
+"CountedFloors": 10,
 "Rogue": 1,
 "Grounds": [],
 "Maps": [
@@ -93,7 +93,11 @@ null,
 null,
 null,
 [
-0
+0,
+1,
+2,
+3,
+4
 ]
 ],
 "Name": {
