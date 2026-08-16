@@ -2353,7 +2353,48 @@
 {
 "Key": {
 "str": [
-0
+-15
+]
+},
+"Value": {
+"$type": "PMDC.Dungeon.BattlePositionEvent, PMDC",
+"StartLocs": [
+{
+"Loc": {
+"X": 0,
+"Y": 0
+},
+"Dir": 4
+},
+{
+"Loc": {
+"X": 0,
+"Y": 1
+},
+"Dir": 4
+},
+{
+"Loc": {
+"X": -1,
+"Y": 1
+},
+"Dir": 4
+},
+{
+"Loc": {
+"X": 1,
+"Y": 1
+},
+"Dir": 4
+}
+],
+"Positions": null
+}
+},
+{
+"Key": {
+"str": [
+-5
 ]
 },
 "Value": {

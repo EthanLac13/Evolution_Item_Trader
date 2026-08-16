@@ -23,8 +23,6 @@ end
 --Engine callback function
 function desiccated_basin_cutscene.Enter(map)
 	
-	desiccated_basin_cutscene.ClearCutscene(map)
-	--[[
 	if SV.ModData_EvolutionItemTrader.Boss_Encountered == false then
 		desiccated_basin_cutscene.InitialCutscene(map)
 	else
@@ -34,7 +32,6 @@ function desiccated_basin_cutscene.Enter(map)
 			desiccated_basin_cutscene.ReturnCutscene(map)
 		end
 	end
-	]]--
 
 end
 
@@ -678,6 +675,10 @@ function desiccated_basin_cutscene.ClearCutscene(map)
 	local cacnea3 = desiccated_basin_cutscene.SpawnPokemon("cacnea", 0, "normal", Gender.Male, 168, 288, Direction.UpRight, "Cacnea3")
 	local cacnea4 = desiccated_basin_cutscene.SpawnPokemon("cacnea", 0, "normal", Gender.Male, 320, 288, Direction.UpLeft, "Cacnea4")
 	
+	local fire_stone = OBJ("FireStone")
+	
+	--local fire_stone = 
+	
 	local coro1 = TASK:BranchCoroutine(function() -- Cacturne is knocked back
 		local moving_char = cacturne
 		GROUND:TeleportTo(moving_char, moving_char.Position.X, moving_char.Position.Y + 48, Direction.Down)
@@ -813,6 +814,14 @@ function desiccated_basin_cutscene.ClearCutscene(map)
 	
 	UI:SetSpeaker(cacturne)
 	UI:WaitShowDialogue("We know where you live,[pause=10] [color=#00FFFF]Glaceon[color].[pause=30] You and your brother both.")
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(glaceon)
+	UI:SetSpeakerEmotion("Stunned")
+	UI:WaitShowDialogue("W-what?!")
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(cacturne)
 	UI:WaitShowDialogue(STRINGS:Format("You won't always have {0} watching your back.", GAME:GetTeamName()))
 	UI:WaitShowDialogue("And someday...[pause=0] Maybe not today,[pause=10] but someday...")
 	GAME:WaitFrames(10)
@@ -825,10 +834,21 @@ function desiccated_basin_cutscene.ClearCutscene(map)
 	UI:WaitShowDialogue("You're going to wish you had let us finish you off down here.")
 	GAME:WaitFrames(10)
 	
+	GROUND:CharSetDrawEffect(glaceon, DrawEffect.Trembling)
+	GAME:WaitFrames(30)
+	
+	UI:SetSpeaker(glaceon, false)
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue("...")
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(cacturne)
+	UI:WaitShowDialogue("Not so bold now,[pause=10] are we?")
+	GAME:WaitFrames(10)
+	
 	SOUND:PlayBattleSE("EVT_Battle_Flash")
 	GAME:FadeOut(true, 30)
 	GROUND:AddMapStatus("blizzard")
-	GROUND:CharSetDrawEffect(glaceon, DrawEffect.Trembling)
 	GAME:WaitFrames(10)
 	GAME:FadeIn(30)
 	GAME:WaitFrames(10)
@@ -969,7 +989,9 @@ function desiccated_basin_cutscene.ClearCutscene(map)
 	GROUND:CharEndDrawEffect(glaceon, DrawEffect.Trembling)
 	
 	GAME:FadeIn(60)
-	GAME:WaitFrames(30)
+	GAME:WaitFrames(10)
+	GROUND:CharSetAction(glaceon, RogueEssence.Ground.FrameGroundAction(glaceon.Position, glaceon.LocHeight, Direction.Up, animId, 2))
+	GAME:WaitFrames(20)
 	
 	GROUND:CharTurnToCharAnimated(player, cacturne, 4)
 	GAME:WaitFrames(10)
@@ -993,22 +1015,180 @@ function desiccated_basin_cutscene.ClearCutscene(map)
 	UI:WaitShowDialogue("L-let's get out of here!!")
 	GAME:WaitFrames(10)
 	
+	SOUND:PlayBattleSE("_UNK_EVT_086")
 	local coro1 = TASK:BranchCoroutine(function() -- Golem runs away
-		GAME:WaitFrames(10)
+		GAME:WaitFrames(30)
 		GROUND:CharAnimateTurnTo(golem, Direction.Down, 6)
 		GAME:WaitFrames(6)
-		GROUND:MoveToPosition(golem, golem.Position.X, golem.Position.Y + 48, false, 0.5)
+		GROUND:MoveToPosition(golem, golem.Position.X, golem.Position.Y + 48, true, 0.75)
 		GROUND:Hide("Golem")
 	end)
 	local coro2 = TASK:BranchCoroutine(function() -- Excadrill runs away
 		GROUND:CharAnimateTurnTo(excadrill, Direction.Down, 4)
 		GAME:WaitFrames(4)
-		GROUND:MoveToPosition(excadrill, excadrill.Position.X, excadrill.Position.Y + 48, false, 1.5)
+		GROUND:MoveToPosition(excadrill, excadrill.Position.X, excadrill.Position.Y + 48, true, 2.5)
 		GROUND:Hide("Excadrill")
 	end)
+	local coro3 = TASK:BranchCoroutine(function() -- Drapion runs away
+		GAME:WaitFrames(10)
+		GROUND:CharAnimateTurnTo(drapion, Direction.Down, 4)
+		GAME:WaitFrames(4)
+		GROUND:MoveToPosition(drapion, drapion.Position.X, drapion.Position.Y + 240, true, 2.5)
+		GROUND:Hide("Drapion")
+	end)
+	local coro4 = TASK:BranchCoroutine(function() -- Tyranitar runs away
+		GAME:WaitFrames(20)
+		GROUND:CharAnimateTurnTo(tyranitar, Direction.Down, 5)
+		GAME:WaitFrames(5)
+		GROUND:MoveToPosition(tyranitar, tyranitar.Position.X, tyranitar.Position.Y + 240, true, 2)
+		GROUND:Hide("Tyranitar")
+	end)
+	local coro5 = TASK:BranchCoroutine(function() -- Cacnea1 runs away
+		GAME:WaitFrames(15)
+		GROUND:CharAnimateTurnTo(cacnea1, Direction.Down, 4)
+		GAME:WaitFrames(4)
+		GROUND:MoveToPosition(cacnea1, cacnea1.Position.X + 24, cacnea1.Position.Y + 240, true, 2.5)
+		GROUND:Hide("Cacnea1")
+	end)
+	local coro6 = TASK:BranchCoroutine(function() -- Cacnea3 runs away
+		GAME:WaitFrames(25)
+		GROUND:CharAnimateTurnTo(cacnea3, Direction.DownRight, 4)
+		GAME:WaitFrames(4)
+		GROUND:MoveToPosition(cacnea3, cacnea3.Position.X + 36, cacnea3.Position.Y + 24, true, 2.5)
+		GROUND:MoveToPosition(cacnea3, cacnea3.Position.X, cacnea3.Position.Y + 48, true, 2.5)
+		GROUND:Hide("Cacnea3")
+	end)
+	local coro7 = TASK:BranchCoroutine(function() -- Cacnea4 runs away
+		GAME:WaitFrames(45)
+		GROUND:CharAnimateTurnTo(cacnea4, Direction.DownLeft, 4)
+		GAME:WaitFrames(4)
+		GROUND:MoveToPosition(cacnea4, cacnea4.Position.X - 36, cacnea4.Position.Y + 24, true, 2.5)
+		GROUND:MoveToPosition(cacnea4, cacnea4.Position.X, cacnea4.Position.Y + 48, true, 2.5)
+		GROUND:Hide("Cacnea4")
+	end)
+	local coro8 = TASK:BranchCoroutine(function() -- Cacnea2 tries to run away, but trips, falls, and drops a Fire Stone
+		GAME:WaitFrames(35)
+		GROUND:CharAnimateTurnTo(cacnea2, Direction.DownLeft, 4)
+		GAME:WaitFrames(4)
+		GROUND:MoveToPosition(cacnea2, cacnea2.Position.X - 24, cacnea2.Position.Y + 24, true, 2.5)
+		GROUND:MoveToPosition(cacnea2, cacnea2.Position.X - 6, cacnea2.Position.Y + 36, true, 2.5)
+		GROUND:AnimateToPosition(cacnea2, "Hurt", Direction.Down, cacnea2.Position.X, cacnea2.Position.Y + 4, 4, 0.125, 0)
+		GAME:WaitFrames(10)
+		GROUND:MoveToPosition(cacnea2, cacnea2.Position.X, cacnea2.Position.Y + 120, true, 2.5)
+	end)
+	local coro9 = TASK:BranchCoroutine(function() -- Cacnea2 speaks as he trips
+		GAME:WaitFrames(71)
+	
+		UI:SetSpeaker(cacnea2)
+		UI:SetSpeakerEmotion("Pain")
+		UI:WaitShowDialogue("Ooft!!")
+	end)
+	local coro10 = TASK:BranchCoroutine(function() -- Player turns to watch them run
+		GAME:WaitFrames(30)
+		GROUND:CharAnimateTurn(player, Direction.Down, 15, false)
+	end)
+	local coro11 = TASK:BranchCoroutine(function() -- Fire Stone appears and falls away from Cacnea
+		GAME:WaitFrames(75)
+		GROUND:TeleportTo(fire_stone, cacnea2.Position.X, cacnea2.Position.Y)
+		GROUND:Unhide("FireStone")
+		GAME:WaitFrames(1)
+		for i = 1, 8 do
+			GROUND:TeleportTo(fire_stone, fire_stone.Position.X - 1, fire_stone.Position.Y)
+			GAME:WaitFrames(1)
+			GROUND:TeleportTo(fire_stone, fire_stone.Position.X - 1, fire_stone.Position.Y - 1)
+			GAME:WaitFrames(1)
+		end
+	end)
+	TASK:JoinCoroutines({coro1,coro2,coro3,coro4, coro5,coro6,coro7,coro8, coro9,coro10,coro11})
+	GAME:WaitFrames(10)
+	
+	GROUND:CharTurnToCharAnimated(player, glaceon, 4)
+	GAME:WaitFrames(10)
+	GROUND:MoveToPosition(player, player.Position.X + 30, player.Position.Y, false, 0.75)
+	GAME:WaitFrames(20)
+	
+	GROUND:CharSetDrawEffect(glaceon, DrawEffect.Trembling)
+	
+	animId = RogueEssence.Content.GraphicsManager.GetAnimIndex("Sit")
+	
+	GAME:WaitFrames(60)
+	GROUND:CharSetAction(glaceon, RogueEssence.Ground.FrameGroundAction(glaceon.Position, glaceon.LocHeight, Direction.Up, animId, 1))
+	GAME:WaitFrames(40)
+	GROUND:CharEndAnim(glaceon)
+	GROUND:CharEndDrawEffect(glaceon, DrawEffect.Trembling)
+	
+	GROUND:CharTurnToCharAnimated(glaceon, player, 6)
+	GAME:WaitFrames(20)
+	
+	UI:SetSpeaker(glaceon)
+	UI:SetSpeakerEmotion("Pain")
+	UI:WaitShowDialogue("Aghhh...[pause=0] Thanks for your help back there...")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("And sorry about what happened just now.")
+	UI:WaitShowDialogue("When I heard him threatening to hurt my brother,[pause=10] I must've...[pause=0] Lost control of myself...")
+	GAME:WaitFrames(10)
+	
+	GROUND:CharAnimateTurnTo(glaceon, Direction.Right, 6)
+	GAME:WaitFrames(5)
+	GROUND:CharSetEmote(glaceon, "notice", 1)
+	SOUND:PlayBattleSE("EVT_Emote_Exclaim")
+	GAME:WaitFrames(30)
+	
+	UI:SetSpeaker(glaceon)
+	UI:WaitShowDialogue("Oh?[pause=20] Looks like [color=#00FFFF]Cacnea[color] dropped an item as he was running away.")
+	GAME:WaitFrames(10)
+	
+	GROUND:MoveToPosition(glaceon, glaceon.Position.X + 48, glaceon.Position.Y + 10, false, 0.5)
+	GAME:WaitFrames(10)
+	SOUND:PlayBattleSE("EVT_CH02_Box_Open")
+	GROUND:Hide("FireStone")
+	GAME:WaitFrames(20)
+	
+	GROUND:CharAnimateTurnTo(glaceon, Direction.Left, 6)
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(glaceon)
+	UI:WaitShowDialogue("It's a [color=#FFCEFF]Fire Stone[color]...")
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("I could've...[pause=60] Used this to become a [color=#00FF00]Flareon[color]...")
+	UI:WaitShowDialogue("Sigh...")
+	GAME:WaitFrames(10)
+	
+	GROUND:MoveToPosition(glaceon, glaceon.Position.X - 38, glaceon.Position.Y - 10, false, 0.5)
+	GAME:WaitFrames(10)
+	
+	UI:SetSpeaker(glaceon)
+	UI:WaitShowDialogue("We should head back.[pause=0] It's dangerous down here.")
+	UI:SetSpeakerEmotion("Worried")
+	UI:WaitShowDialogue("After using that last attack,[pause=10] I'm totally out of energy.[pause=0] And you must also be tired.")
+	UI:SetSpeakerEmotion("Sad")
+	UI:WaitShowDialogue("Hope my brother's not going to be mad...")
+	GAME:WaitFrames(10)
+	
+	local coro1 = TASK:BranchCoroutine(function() -- Player walks away
+		GROUND:CharAnimateTurnTo(player, Direction.Down, 4)
+		GAME:WaitFrames(4)
+		GROUND:MoveToPosition(player, player.Position.X, player.Position.Y + 180, false, 0.75)
+	end)
+	local coro2 = TASK:BranchCoroutine(function() -- Glaceon walks away
+		GAME:WaitFrames(20)
+		GROUND:CharAnimateTurnTo(glaceon, Direction.Down, 6)
+		GAME:WaitFrames(6)
+		GROUND:MoveToPosition(glaceon, glaceon.Position.X, glaceon.Position.Y + 180, false, 0.625)
+	end)
 	TASK:JoinCoroutines({coro1,coro2})
+	GAME:WaitFrames(60)
 	
+	-- Cacturne pos for return: 244, 212
 	
+	GAME:FadeOut(false, 40)
+	GAME:WaitFrames(20)
+	
+	SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued = true
+	
+	GAME:CutsceneMode(false)
+	
+	COMMON.EndDungeonDay(RogueEssence.Data.GameProgress.ResultType.Cleared, 'guildmaster_island', -1, 1, 0)
 	
 end
 
