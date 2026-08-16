@@ -102,17 +102,29 @@ function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 		GROUND:Hide("EvolutionShopItemBuyer")
 		GROUND:Hide("EvolutionShopItemSeller")
 		
-		local eevee = base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Male, 712, 600, Direction.Down, "EvolutionShopQuestGiver")
-		
-		-- Only spawn Glaceon if the quest is complete
-		local questname = "Evolution_Item_Trader_Quest"
-		local quest = SV.missions.Missions[questname]
-		
-		if quest ~= nil then
-			if quest.Complete == COMMON.MISSION_COMPLETE then
-				GROUND:TeleportTo(eevee, 712, 600, Direction.Right)
-				local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 600, Direction.Left, "EvolutionShopQuestTarget")
+		-- If we haven't reached Canyon Camp yet, have the two mention the quest setup
+		if SV.canyon_camp.ExpositionComplete == false then
+			base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Male, 712, 592, Direction.Right, "EvolutionShopPreQuestExpoBrother")
+			base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Female, 736, 592, Direction.Left, "EvolutionShopPreQuestExpoSister")
+		-- If we have, offer to start the quest
+		elseif SV.ModData_EvolutionItemTrader.Quest_Given == false then
+			base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Male, 708, 592, Direction.DownRight, "EvolutionShopQuestStartBrother")
+			base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Female, 740, 592, Direction.DownLeft, "EvolutionShopQuestStartSister")
+			base_camp_2_evoshop.SpawnPokemon("cacnea", 0, "normal", Gender.Male, 724, 612, Direction.Up, "EvolutionShopQuestStartCriminal")
+		--[[else
+			local eevee = base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Male, 712, 600, Direction.Down, "EvolutionShopQuestGiver")
+			
+			-- Only spawn Glaceon if the quest is complete
+			local questname = "Evolution_Item_Trader_Quest"
+			local quest = SV.missions.Missions[questname]
+			
+			if quest ~= nil then
+				if quest.Complete == COMMON.MISSION_COMPLETE then
+					GROUND:TeleportTo(eevee, 712, 600, Direction.Right)
+					local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 600, Direction.Left, "EvolutionShopQuestTarget")
+				end
 			end
+			]]--
 		end
 		
 	end
@@ -147,41 +159,191 @@ function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 	
 end
 
-
-function base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
-	UI:SetSpeaker(obj)
-		
-	local questname = "Evolution_Item_Trader_Quest"
-	local quest = SV.missions.Missions[questname]
+function base_camp_2_evoshop.Interact_EvolutionShopPreQuestExpo(obj, activator)
 	
-	if not SV.ModData_EvolutionItemTrader.QuestGiven then
+	local eevee_brother = CH("EvolutionShopPreQuestExpoBrother")
+	local eevee_sister = CH("EvolutionShopPreQuestExpoSister")
+	
+	if SV.ModData_EvolutionItemTrader.Talked_Pre_Quest == false then
 		
-		GROUND:CharTurnToChar(obj, activator)
-		UI:WaitShowDialogue(STRINGS.MapStrings['Evoshop_Quest_Intro'])
+		GROUND:CharTurnToCharAnimated(eevee_brother, activator, 4)
+		GAME:WaitFrames(5)
+		GROUND:CharTurnToCharAnimated(eevee_sister, activator, 4)
+		GAME:WaitFrames(10)
 		
-		-- Create mission and add it to active missions
-		COMMON.CreateMission(questname,
-			{ Complete = COMMON.MISSION_INCOMPLETE, Type = COMMON.SIDEQUEST_TYPE_RESCUE,
-			DestZone = "depleted_basin", DestSegment = 0, DestFloor = 6,
-			FloorUnknown = false,
-			TargetSpecies = RogueEssence.Dungeon.MonsterID("glaceon", 0, "normal", Gender.Female),
-			ClientSpecies = RogueEssence.Dungeon.MonsterID("eevee", 0, "normal", Gender.Male) }
-		)
-		SV.ModData_EvolutionItemTrader.QuestGiven = true
+		GROUND:CharSetEmote(eevee_brother, "glowing", 1)
+		UI:SetSpeaker(eevee_brother)
+		UI:WaitShowDialogue("Hiya![pause=20] This is the [color=#00FF00]Eevee[color] Shop!")
+		UI:WaitShowDialogue("I'm [color=#00FFFF]Eevee[color],[pause=10] and this is my sister,[pause=10] [color=#00FFFF]Eevee[color]!")
+		GAME:WaitFrames(10)
+		
+		GROUND:CharSetEmote(eevee_sister, "glowing", 1)
+		UI:SetSpeaker(eevee_sister)
+		UI:WaitShowDialogue("Right now,[pause=10] we're still deciding on what to sell.")
+		UI:WaitShowDialogue("Once we've saved up enough,[pause=10] we're going to find a [color=#00FF00]Kecleon[color] shop that sells evolution stones.")
+		GAME:WaitFrames(10)
+		
+		GROUND:CharSetEmote(eevee_brother, "glowing", 1)
+		UI:SetSpeaker(eevee_brother)
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("Oh,[pause=10] I can't wait to become a [color=#00FF00]Glaceon[color]![pause=0] My breath feels cold just thinking about it!")
+		GAME:WaitFrames(10)
+		
+		GROUND:CharSetEmote(eevee_sister, "glowing", 1)
+		UI:SetSpeaker(eevee_sister)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("Not if my fire breath heats it up first!")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("If you check back later,[pause=10] our shop might be open then.")
+		GAME:WaitFrames(10)
+		
+		SV.ModData_EvolutionItemTrader.Talked_Pre_Quest = true
+		
+		GROUND:CharTurnToCharAnimated(eevee_brother, eevee_sister, 4)
+		GAME:WaitFrames(5)
+		GROUND:CharTurnToCharAnimated(eevee_sister, eevee_brother, 4)
+		GAME:WaitFrames(10)
+		
+		UI:ResetSpeaker()
 		
 	else
 		
-		if not SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued then
-			if quest.Complete == COMMON.MISSION_INCOMPLETE then
-				GROUND:CharTurnToChar(obj, activator)
-				UI:WaitShowDialogue(STRINGS.MapStrings['Evoshop_Quest_Given'])
-			else
-				base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
-			end
-		end
+		GROUND:CharSetEmote(eevee_brother, "glowing", 1)
+		UI:SetSpeaker(eevee_brother)
+		UI:SetSpeakerEmotion("Worried")
+		UI:WaitShowDialogue("Hmmm...[pause=30] [color=#00FFFF]Kecleon[color]'s shop already has everything we could get our paws on...")
+		GAME:WaitFrames(10)
+		
+		GROUND:CharSetEmote(eevee_sister, "glowing", 1)
+		UI:SetSpeaker(eevee_sister)
+		UI:WaitShowDialogue("Maybe we could...[pause=0] Hmmm...")
+		GAME:WaitFrames(10)
 		
 	end
-	UI:ResetSpeaker()
+	
+end
+
+
+function base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
+	
+	if SV.ModData_EvolutionItemTrader.Quest_Given == false then
+		local player = CH("PLAYER")
+		local eevee_brother = CH("EvolutionShopQuestStartBrother")
+		local eevee_sister = CH("EvolutionShopQuestStartSister")
+		local cacnea = CH("EvolutionShopQuestStartCriminal")
+		
+		GAME:CutsceneMode(true)
+		GAME:FadeOut(false, 20)
+		
+		-- Set camera position
+		GAME:MoveCamera(732, 636, 1, false)
+		
+		-- Set NPC positions
+		GROUND:TeleportTo(player, 684, 632, Direction.UpRight)
+		GAME:WaitFrames(20)
+		
+		GAME:FadeIn(20)
+		
+		GROUND:CharSetEmote(eevee_brother, "glowing", 1)
+		UI:SetSpeaker(eevee_brother)
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("Wow![pause=20] And they're just lying around on the ground?!")
+		GAME:WaitFrames(10)
+			
+		UI:SetSpeaker(cacnea)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("You betcha'![pause=0] [color=#FFCEFF]Fire Stones[color],[pause=10] [color=#FFCEFF]Ice Stones[color]...[pause=30] any kind of stone you want!")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("We're going on an expedition to a side path deeper in [color=#FFC663]Depleted Basin[color].")
+		UI:WaitShowDialogue("If you come along,[pause=10] we'll let you keep half the take!")
+		GAME:WaitFrames(10)
+		
+		GROUND:CharSetEmote(eevee_sister, "glowing", 1)
+		UI:SetSpeaker(eevee_sister)
+		UI:SetSpeakerEmotion("Happy")
+		UI:WaitShowDialogue("I can't wait to get started!")
+		GAME:WaitFrames(10)
+		
+		GROUND:EntTurn(eevee_sister, Direction.Left)
+		GAME:WaitFrames(10)
+		GROUND:EntTurn(eevee_brother, Direction.Right)
+		GAME:WaitFrames(10)
+		
+		GROUND:CharSetEmote(eevee_sister, "glowing", 1)
+		UI:SetSpeaker(eevee_sister)
+		UI:WaitShowDialogue("Will you stay and look after the shop while I go along with [color=#00FFFF]Cacnea[color]'s crew?")
+		GAME:WaitFrames(10)
+		
+		GROUND:CharSetEmote(eevee_brother, "glowing", 1)
+		UI:SetSpeaker(eevee_brother)
+		UI:SetSpeakerEmotion("Sad")
+		UI:WaitShowDialogue("Awww,[pause=10] I wanted to go too...")
+		UI:SetSpeakerEmotion("Normal")
+		UI:WaitShowDialogue("But I will.[pause=0] I'll make sure nothing happens while you're gone.")
+		GAME:WaitFrames(10)
+		
+		GROUND:EntTurn(eevee_sister, Direction.DownLeft)
+		GAME:WaitFrames(10)
+		GROUND:EntTurn(eevee_brother, Direction.DownRight)
+		GAME:WaitFrames(10)
+		
+		GROUND:CharSetEmote(eevee_sister, "glowing", 1)
+		UI:SetSpeaker(eevee_sister)
+		UI:WaitShowDialogue("All right.[pause=0] We're ready to go any time.")
+		GAME:WaitFrames(10)
+			
+		UI:SetSpeaker(cacnea)
+		UI:WaitShowDialogue("Great![pause=20] Just follow me.")
+		GAME:WaitFrames(10)
+		
+		local coro1 = TASK:BranchCoroutine(function() -- Cacnea turns and walks away
+			GROUND:CharAnimateTurnTo(cacnea, Direction.Left, 4)
+			GAME:WaitFrames(4)
+			GROUND:MoveToPosition(cacnea, cacnea.Position.X - 240, cacnea.Position.Y, false, 1.25)
+		end)
+		local coro2 = TASK:BranchCoroutine(function() -- Eevee sister walks away
+			GAME:WaitFrames(30)
+			GROUND:MoveToPosition(eevee_sister, eevee_sister.Position.X - 4, eevee_sister.Position.Y + 10, false, 1.25)
+			GROUND:MoveToPosition(eevee_sister, eevee_sister.Position.X - 6, eevee_sister.Position.Y + 6, false, 1.25)
+			GROUND:MoveToPosition(eevee_sister, eevee_sister.Position.X - 10, eevee_sister.Position.Y + 4, false, 1.25)
+			GROUND:MoveToPosition(eevee_sister, eevee_sister.Position.X - 240, eevee_sister.Position.Y, false, 1.25)
+		end)
+		local coro3 = TASK:BranchCoroutine(function() -- Eevee brother turns to watch
+			GAME:WaitFrames(60)
+			GROUND:CharAnimateTurnTo(eevee_brother, Direction.Left, 40)
+		end)
+		local coro4 = TASK:BranchCoroutine(function() -- Eevee brother speaks
+			GAME:WaitFrames(120)
+			GROUND:CharSetEmote(eevee_brother, "glowing", 1)
+			UI:SetSpeaker(eevee_brother)
+			UI:WaitShowDialogue("Bye![pause=20] Have a nice trip!")
+		end)
+		TASK:JoinCoroutines({coro1,coro2,coro3,coro4})
+		GAME:WaitFrames(10)
+		
+		GAME:FadeOut(false, 20)
+		
+		GAME:WaitFrames(20)
+		SV.ModData_EvolutionItemTrader.Quest_Given = true
+		GAME:CutsceneMode(false)
+		GAME:MoveCamera(0, 0, 1, true)
+		
+		GAME:FadeIn(20)
+	else
+		local player = CH("PLAYER")
+		local eevee_brother = CH("EvolutionShopQuestStartBrother")
+		
+		GROUND:CharTurnToCharAnimated(eevee_brother, player, 4)
+		
+		UI:SetSpeaker(eevee_brother)
+		UI:WaitShowDialogue("[color=#00FFFF]Eevee[color] is so lucky![pause=0] Getting to go on an adventure like that...")
+		UI:SetSpeakerEmotion("Inspired")
+		UI:WaitShowDialogue("And then,[pause=10] when she comes back...[pause=0] We're gonna get to evolve!!")
+		GAME:WaitFrames(10)
+		
+		GROUND:CharAnimateTurnTo(eevee_brother, Direction.Left, 4)
+	end
+	
 end
 
 function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)

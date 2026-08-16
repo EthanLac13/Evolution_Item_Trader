@@ -11,10 +11,11 @@ function base_camp_2.Init(map)
 	-- Initialize save data
 	if SV.ModData_EvolutionItemTrader == nil then
 		print("Initializing savevars")
-		if SV.Experimental or 1 == 1 then
+		if SV.Experimental then
 			SV.ModData_EvolutionItemTrader = {
 				Initialized = true,
 				
+				Talked_Pre_Quest = false,
 				Quest_Given = false,
 				Boss_Encountered = false,
 				Boss_Defeated = false,
@@ -24,6 +25,7 @@ function base_camp_2.Init(map)
 			SV.ModData_EvolutionItemTrader = {
 				Initialized = true,
 				
+				Talked_Pre_Quest = true,
 				Quest_Given = true,
 				Boss_Encountered = true,
 				Boss_Defeated = true,
@@ -36,6 +38,23 @@ function base_camp_2.Init(map)
 	
 	-- Spawn NPCs
 	base_camp_2_evoshop.Spawn_Shopkeepers(map)
+end
+
+function base_camp_2.EvolutionShopPreQuestExpoBrother_Action(obj, activator)
+	base_camp_2_evoshop.Interact_EvolutionShopPreQuestExpo(obj, activator)
+end
+function base_camp_2.EvolutionShopPreQuestExpoSister_Action(obj, activator)
+	base_camp_2_evoshop.Interact_EvolutionShopPreQuestExpo(obj, activator)
+end
+
+function base_camp_2.EvolutionShopQuestStartBrother_Action(obj, activator)
+	base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
+end
+function base_camp_2.EvolutionShopQuestStartSister_Action(obj, activator)
+	base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
+end
+function base_camp_2.EvolutionShopQuestStartCriminal_Action(obj, activator)
+	base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
 end
 
 function base_camp_2.EvolutionShopQuestGiver_Action(obj, activator)
