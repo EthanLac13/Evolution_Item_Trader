@@ -94,15 +94,15 @@ end
 function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 	
 	-- Create shopkeepers
-	local flareon = base_camp_2_evoshop.SpawnPokemon("flareon", 0, "normal", Gender.Male, 712, 592, Direction.Down, "EvolutionShopItemBuyer")
-	local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 592, Direction.Down, "EvolutionShopItemSeller")
+	local flareon = base_camp_2_evoshop.SpawnPokemon("flareon", 0, "normal", Gender.Male, 712, 560, Direction.Down, "EvolutionShopItemBuyer")
+	local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 560, Direction.Down, "EvolutionShopItemSeller")
 	
 	if not SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued then
 		
 		GROUND:Hide("EvolutionShopItemBuyer")
 		GROUND:Hide("EvolutionShopItemSeller")
 		
-		local eevee = base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Male, 712, 592, Direction.Down, "EvolutionShopQuestGiver")
+		local eevee = base_camp_2_evoshop.SpawnPokemon("eevee", 0, "normal", Gender.Male, 712, 600, Direction.Down, "EvolutionShopQuestGiver")
 		
 		-- Only spawn Glaceon if the quest is complete
 		local questname = "Evolution_Item_Trader_Quest"
@@ -110,18 +110,40 @@ function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 		
 		if quest ~= nil then
 			if quest.Complete == COMMON.MISSION_COMPLETE then
-				GROUND:TeleportTo(eevee, 712, 592, Direction.Right)
-				local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 592, Direction.Left, "EvolutionShopQuestTarget")
+				GROUND:TeleportTo(eevee, 712, 600, Direction.Right)
+				local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 600, Direction.Left, "EvolutionShopQuestTarget")
 			end
 		end
 		
 	end
 	
 	-- Create shop stall
-	animation_data = RogueEssence.Content.ObjAnimData("FRLG_Market_Stall", 60)
-	shop_stall_obj = RogueEssence.Ground.GroundObject(animation_data, Dir8.None, Rect(0, 32, 96, 32), RogueElements.Loc(0, 48), true, "EvolutionShopStall")
-	shop_stall_obj.MapLoc = RogueElements.Loc(684, 560)
+	local shop_sprite = ""
+	if not SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued then
+		shop_sprite = "Eevee_Shop_Tent"
+	else
+		shop_sprite = "Evoshop_Tent"
+	end
+	animation_data = RogueEssence.Content.ObjAnimData(shop_sprite, 60)
+	shop_stall_obj = RogueEssence.Ground.GroundObject(animation_data, Dir8.None, Rect(0, 0, 0, 0), RogueElements.Loc(0, 74), true, "EvolutionShopStall")
+	shop_stall_obj.MapLoc = RogueElements.Loc(680, 564)
 	GAME:GetCurrentGround():AddTempObject(shop_stall_obj)
+	
+	-- Create carpet
+	animation_data = RogueEssence.Content.ObjAnimData("Evoshop_Carpet", 60)
+	shop_stall_carpet = RogueEssence.Ground.GroundObject(animation_data, Dir8.None, Rect(0, 0, 0, 0), RogueElements.Loc(0, 0), true, "EvolutionShopCarpet")
+	shop_stall_carpet.MapLoc = RogueElements.Loc(696, 523)
+	GAME:GetCurrentGround():AddTempObject(shop_stall_carpet)
+	
+	-- Move over player teammates
+	local teammate = CH("Assembly9")
+	if teammate ~= nil then
+		GROUND:TeleportTo(teammate, teammate.Position.X - 16, teammate.Position.Y - 104, Direction.Left)
+	end
+	if teammate ~= nil then
+	local teammate = CH("Assembly24")
+		GROUND:TeleportTo(teammate, teammate.Position.X + 8, teammate.Position.Y + 16, Direction.Down)
+	end
 	
 end
 
@@ -172,7 +194,7 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	GAME:FadeOut(false, 20)
 	
 	-- Set NPC positions
-	GROUND:TeleportTo(player, 724, 624, Direction.Up)
+	GROUND:TeleportTo(player, 724, 632, Direction.Up)
 	GAME:WaitFrames(20)
 	
 	GAME:FadeIn(20)

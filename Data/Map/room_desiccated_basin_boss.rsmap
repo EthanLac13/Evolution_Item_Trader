@@ -91,7 +91,7 @@
 }
 ],
 "EquippedItem": {
-"ID": "held_big_root",
+"ID": "held_fickle_lens",
 "Cursed": false,
 "HiddenValue": "",
 "Amount": 0,
@@ -217,520 +217,6 @@
 {
 "SkillNum": "energy_ball",
 "Charges": 9,
-"CanForget": true
-}
-],
-"BaseIntrinsics": [
-"sand_veil"
-],
-"FormIntrinsicSlot": 0,
-"Relearnables": {},
-"Discriminator": 0,
-"MetAt": "",
-"MetLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"DefeatAt": "",
-"DefeatLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"IsFounder": false,
-"IsPartner": false,
-"NameLocked": false,
-"IsFavorite": false,
-"Unrecruitable": true,
-"ActionEvents": [],
-"ScriptVars": null
-}
-],
-"Guests": [],
-"inventory": [],
-"Name": "",
-"LeaderIndex": 0,
-"FoeConflict": false
-},
-{
-"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
-"Players": [
-{
-"Element1": "grass",
-"Element2": "none",
-"TurnWait": 0,
-"TurnUsed": false,
-"movementSpeed": 0,
-"dead": false,
-"serializationLoc": {
-"X": 9,
-"Y": 15
-},
-"serializationDir": 4,
-"ProxyName": "",
-"ProxySprite": {
-"Species": "",
-"Form": -1,
-"Skin": "",
-"Gender": -1
-},
-"CurrentForm": {
-"Species": "cacnea",
-"Form": 0,
-"Skin": "normal",
-"Gender": 1
-},
-"ProxyAtk": -1,
-"ProxyDef": -1,
-"ProxyMAtk": -1,
-"ProxyMDef": -1,
-"ProxySpeed": -1,
-"Skills": [
-{
-"Element": {
-"SkillNum": "needle_arm",
-"Charges": 18,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 0
-},
-{
-"Element": {
-"SkillNum": "feint_attack",
-"Charges": 19,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 1
-},
-{
-"Element": {
-"SkillNum": "",
-"Charges": 0,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 2
-},
-{
-"Element": {
-"SkillNum": "",
-"Charges": 0,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 3
-}
-],
-"Intrinsics": [
-{
-"Element": {
-"ID": "sand_veil"
-},
-"BackRef": 0
-}
-],
-"EquippedItem": {
-"ID": "",
-"Cursed": false,
-"HiddenValue": "",
-"Amount": 0,
-"Price": 0
-},
-"Absentee": false,
-"ChargeBoost": 0,
-"HP": 80,
-"HPRemainder": 0,
-"Fullness": 100,
-"FullnessRemainder": 0,
-"MaxFullness": 100,
-"StatusEffects": {},
-"MissChain": 0,
-"EXPMarked": false,
-"Tactic": {
-"Name": {
-"DefaultText": "Itemless Dumb Wander",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"ID": "wander_dumb_itemless",
-"Assignable": false,
-"Plans": [
-{
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 32,
-"RestrictedMobilityTypes": 0,
-"RestrictMobilityPassable": false,
-"AttackRange": 4,
-"StatusRange": 4,
-"SelfStatusRange": 3,
-"AbandonRangeOnHit": true
-},
-{
-"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 160,
-"RestrictedMobilityTypes": 0,
-"RestrictMobilityPassable": false,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0,
-"AbandonRangeOnHit": false
-},
-{
-"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 160,
-"RestrictedMobilityTypes": 0,
-"RestrictMobilityPassable": false,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0,
-"AbandonRangeOnHit": false
-},
-{
-"$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 160,
-"RestrictedMobilityTypes": 0,
-"RestrictMobilityPassable": false,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0,
-"AbandonRangeOnHit": false
-}
-]
-},
-"Mobility": 0,
-"CantWalk": false,
-"ItemDisabled": false,
-"IntrinsicDisabled": false,
-"CanRemoveStuck": false,
-"StopItemAtHit": false,
-"ForceAI": false,
-"MovesScrambled": false,
-"ChargeSaver": false,
-"WaitToAttack": false,
-"CantInteract": false,
-"EnemyOfFriend": false,
-"AttackFriend": false,
-"TileSight": -1,
-"CharSight": -1,
-"Unidentifiable": false,
-"Unlocatable": false,
-"SeeAllChars": false,
-"SeeItems": false,
-"SeeWallItems": false,
-"SeeTraps": false,
-"CharStates": [
-{
-"$type": "PMDC.Dungeon.SandState, PMDC"
-}
-],
-"BackRef": {
-"Index": -1
-},
-"Nickname": "",
-"OriginalUUID": "",
-"OriginalTeam": "",
-"BaseForm": {
-"Species": "cacnea",
-"Form": 0,
-"Skin": "normal",
-"Gender": 1
-},
-"Level": 32,
-"EXP": 0,
-"MaxHPBonus": 20,
-"AtkBonus": 0,
-"DefBonus": 10,
-"MAtkBonus": 0,
-"MDefBonus": 10,
-"SpeedBonus": 0,
-"BaseSkills": [
-{
-"SkillNum": "needle_arm",
-"Charges": 18,
-"CanForget": true
-},
-{
-"SkillNum": "feint_attack",
-"Charges": 19,
-"CanForget": true
-},
-{
-"SkillNum": "",
-"Charges": 0,
-"CanForget": true
-},
-{
-"SkillNum": "",
-"Charges": 0,
-"CanForget": true
-}
-],
-"BaseIntrinsics": [
-"sand_veil"
-],
-"FormIntrinsicSlot": 0,
-"Relearnables": {},
-"Discriminator": 0,
-"MetAt": "",
-"MetLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"DefeatAt": "",
-"DefeatLoc": {
-"ID": "",
-"StructID": {
-"Segment": -1,
-"ID": -1
-},
-"EntryPoint": -1
-},
-"IsFounder": false,
-"IsPartner": false,
-"NameLocked": false,
-"IsFavorite": false,
-"Unrecruitable": true,
-"ActionEvents": [],
-"ScriptVars": null
-}
-],
-"Guests": [],
-"inventory": [],
-"Name": "",
-"LeaderIndex": 0,
-"FoeConflict": false
-},
-{
-"$type": "RogueEssence.Dungeon.MonsterTeam, RogueEssence",
-"Players": [
-{
-"Element1": "grass",
-"Element2": "none",
-"TurnWait": 0,
-"TurnUsed": false,
-"movementSpeed": 0,
-"dead": false,
-"serializationLoc": {
-"X": 11,
-"Y": 15
-},
-"serializationDir": 4,
-"ProxyName": "",
-"ProxySprite": {
-"Species": "",
-"Form": -1,
-"Skin": "",
-"Gender": -1
-},
-"CurrentForm": {
-"Species": "cacnea",
-"Form": 0,
-"Skin": "normal",
-"Gender": 2
-},
-"ProxyAtk": -1,
-"ProxyDef": -1,
-"ProxyMAtk": -1,
-"ProxyMDef": -1,
-"ProxySpeed": -1,
-"Skills": [
-{
-"Element": {
-"SkillNum": "needle_arm",
-"Charges": 18,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 0
-},
-{
-"Element": {
-"SkillNum": "feint_attack",
-"Charges": 19,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 1
-},
-{
-"Element": {
-"SkillNum": "",
-"Charges": 0,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 2
-},
-{
-"Element": {
-"SkillNum": "",
-"Charges": 0,
-"Enabled": true,
-"Sealed": false
-},
-"BackRef": 3
-}
-],
-"Intrinsics": [
-{
-"Element": {
-"ID": "sand_veil"
-},
-"BackRef": 0
-}
-],
-"EquippedItem": {
-"ID": "",
-"Cursed": false,
-"HiddenValue": "",
-"Amount": 0,
-"Price": 0
-},
-"Absentee": false,
-"ChargeBoost": 0,
-"HP": 80,
-"HPRemainder": 0,
-"Fullness": 100,
-"FullnessRemainder": 0,
-"MaxFullness": 100,
-"StatusEffects": {},
-"MissChain": 0,
-"EXPMarked": false,
-"Tactic": {
-"Name": {
-"DefaultText": "Itemless Dumb Wander",
-"LocalTexts": {}
-},
-"Released": false,
-"Comment": "",
-"ID": "wander_dumb_itemless",
-"Assignable": false,
-"Plans": [
-{
-"$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 32,
-"RestrictedMobilityTypes": 0,
-"RestrictMobilityPassable": false,
-"AttackRange": 4,
-"StatusRange": 4,
-"SelfStatusRange": 3,
-"AbandonRangeOnHit": true
-},
-{
-"$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 160,
-"RestrictedMobilityTypes": 0,
-"RestrictMobilityPassable": false,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0,
-"AbandonRangeOnHit": false
-},
-{
-"$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 160,
-"RestrictedMobilityTypes": 0,
-"RestrictMobilityPassable": false,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0,
-"AbandonRangeOnHit": false
-},
-{
-"$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 160,
-"RestrictedMobilityTypes": 0,
-"RestrictMobilityPassable": false,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 0,
-"AbandonRangeOnHit": false
-}
-]
-},
-"Mobility": 0,
-"CantWalk": false,
-"ItemDisabled": false,
-"IntrinsicDisabled": false,
-"CanRemoveStuck": false,
-"StopItemAtHit": false,
-"ForceAI": false,
-"MovesScrambled": false,
-"ChargeSaver": false,
-"WaitToAttack": false,
-"CantInteract": false,
-"EnemyOfFriend": false,
-"AttackFriend": false,
-"TileSight": -1,
-"CharSight": -1,
-"Unidentifiable": false,
-"Unlocatable": false,
-"SeeAllChars": false,
-"SeeItems": false,
-"SeeWallItems": false,
-"SeeTraps": false,
-"CharStates": [
-{
-"$type": "PMDC.Dungeon.SandState, PMDC"
-}
-],
-"BackRef": {
-"Index": -1
-},
-"Nickname": "",
-"OriginalUUID": "",
-"OriginalTeam": "",
-"BaseForm": {
-"Species": "cacnea",
-"Form": 0,
-"Skin": "normal",
-"Gender": 2
-},
-"Level": 32,
-"EXP": 0,
-"MaxHPBonus": 20,
-"AtkBonus": 0,
-"DefBonus": 10,
-"MAtkBonus": 0,
-"MDefBonus": 10,
-"SpeedBonus": 0,
-"BaseSkills": [
-{
-"SkillNum": "needle_arm",
-"Charges": 18,
-"CanForget": true
-},
-{
-"SkillNum": "feint_attack",
-"Charges": 19,
-"CanForget": true
-},
-{
-"SkillNum": "",
-"Charges": 0,
-"CanForget": true
-},
-{
-"SkillNum": "",
-"Charges": 0,
 "CanForget": true
 }
 ],
@@ -1037,10 +523,10 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 13,
-"Y": 14
+"X": 8,
+"Y": 8
 },
-"serializationDir": 3,
+"serializationDir": 0,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1290,10 +776,10 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 8,
-"Y": 8
+"X": 11,
+"Y": 14
 },
-"serializationDir": 0,
+"serializationDir": 4,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1547,10 +1033,10 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 7,
+"X": 9,
 "Y": 14
 },
-"serializationDir": 5,
+"serializationDir": 4,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -1610,7 +1096,7 @@
 "Intrinsics": [
 {
 "Element": {
-"ID": "sand_rush"
+"ID": "sturdy"
 },
 "BackRef": 0
 }
@@ -1707,11 +1193,7 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
-"CharStates": [
-{
-"$type": "PMDC.Dungeon.SandState, PMDC"
-}
-],
+"CharStates": [],
 "BackRef": {
 "Index": -1
 },
@@ -1755,9 +1237,9 @@
 }
 ],
 "BaseIntrinsics": [
-"sand_rush"
+"sturdy"
 ],
-"FormIntrinsicSlot": 0,
+"FormIntrinsicSlot": 1,
 "Relearnables": {},
 "Discriminator": 0,
 "MetAt": "",
@@ -2318,10 +1800,10 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 6,
+"X": 7,
 "Y": 12
 },
-"serializationDir": 6,
+"serializationDir": 5,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -2478,7 +1960,11 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
-"CharStates": [],
+"CharStates": [
+{
+"$type": "PMDC.Dungeon.SandState, PMDC"
+}
+],
 "BackRef": {
 "Index": -1
 },
@@ -2571,10 +2057,10 @@
 "movementSpeed": 0,
 "dead": false,
 "serializationLoc": {
-"X": 14,
+"X": 13,
 "Y": 12
 },
-"serializationDir": 2,
+"serializationDir": 3,
 "ProxyName": "",
 "ProxySprite": {
 "Species": "",
@@ -2731,7 +2217,11 @@
 "SeeItems": false,
 "SeeWallItems": false,
 "SeeTraps": false,
-"CharStates": [],
+"CharStates": [
+{
+"$type": "PMDC.Dungeon.SandState, PMDC"
+}
+],
 "BackRef": {
 "Index": -1
 },
@@ -2839,15 +2329,6 @@
 "LocHeight": 0
 },
 "Hidden": false
-},
-"map_clear_check": {
-"ID": "map_clear_check",
-"StatusStates": [],
-"Emitter": {
-"$type": "RogueEssence.Content.EmptySwitchOffEmitter, RogueEssence",
-"LocHeight": 0
-},
-"Hidden": false
 }
 },
 "MapEffect": {
@@ -2869,18 +2350,6 @@
 "OnMapStatusAdds": [],
 "OnMapStatusRemoves": [],
 "OnMapStarts": [
-{
-"Key": {
-"str": [
--15
-]
-},
-"Value": {
-"$type": "RogueEssence.Dungeon.SingleCharScriptEvent, RogueEssence",
-"Script": "SpawnDesiccatedBasinAllies",
-"ArgTable": "{}"
-}
-},
 {
 "Key": {
 "str": [

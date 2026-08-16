@@ -4,7 +4,7 @@
 "$type": "RogueEssence.Ground.GroundMap, RogueEssence",
 "TexSize": 3,
 "Name": {
-"DefaultText": "",
+"DefaultText": "Desiccated Basin Pit",
 "LocalTexts": {}
 },
 "Released": false,
@@ -49250,7 +49250,7 @@
 }
 ],
 "AssetName": "desiccated_basin_cutscene",
-"Music": "",
+"Music": "Cave Camp.ogg",
 "EdgeView": 2,
 "NoSwitching": false,
 "ViewCenter": null,
