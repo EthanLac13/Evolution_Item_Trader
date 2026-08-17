@@ -538,7 +538,7 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	
 	UI:SetSpeaker(sister)
 	UI:WaitShowDialogue("We could buy them off of other Pokémon who do have them.")
-	UI:WaitShowDialogue("We don't need Poké so much now,[pause=10] but you know what we do need?[pause=0] Heart Scales.")
+	UI:WaitShowDialogue("We don't need Poké so much now,[pause=10] but you know what we do need?[pause=0] [color=#FFCEFF]Heart Scales[color].")
 	GAME:WaitFrames(10)
 	
 	UI:SetSpeaker(brother)
@@ -548,7 +548,7 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	GAME:WaitFrames(10)
 	
 	UI:SetSpeaker(sister)
-	UI:WaitShowDialogue("If we want to learn more moves,[pause=10] and be the best [color=#00FF00]Flareon[color] and [color=#00FF00]Glaceon[color] we can be,[pause=10] we need Heart Scales.")
+	UI:WaitShowDialogue("If we want to learn more moves,[pause=10] and be the best [color=#00FF00]Flareon[color] and [color=#00FF00]Glaceon[color] we can be,[pause=10] we need [color=#FFCEFF]Heart Scales[color].")
 	GAME:WaitFrames(10)
 	
 	UI:SetSpeaker(brother)
