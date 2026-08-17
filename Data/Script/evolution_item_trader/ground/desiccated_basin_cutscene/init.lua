@@ -1184,8 +1184,6 @@ function desiccated_basin_cutscene.ClearCutscene(map)
 	GAME:FadeOut(false, 40)
 	GAME:WaitFrames(20)
 	
-	SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued = true
-	
 	GAME:CutsceneMode(false)
 	
 	COMMON.EndDungeonDay(RogueEssence.Data.GameProgress.ResultType.Cleared, 'guildmaster_island', -1, 1, 0)

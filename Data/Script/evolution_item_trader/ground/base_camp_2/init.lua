@@ -57,10 +57,14 @@ function base_camp_2.EvolutionShopQuestStartCriminal_Action(obj, activator)
 	base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
 end
 
-function base_camp_2.EvolutionShopQuestGiver_Action(obj, activator)
-	base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
+function base_camp_2.EvolutionShopQuestWaitingBrother_Action(obj, activator)
+	base_camp_2_evoshop.Interact_QuestWaiting(obj, activator)
 end
-function base_camp_2.EvolutionShopQuestTarget_Action(obj, activator)
+
+function base_camp_2.EvolutionShopQuestCompleteBrother_Action(obj, activator)
+	base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
+end
+function base_camp_2.EvolutionShopQuestCompleteSister_Action(obj, activator)
 	base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 end
 

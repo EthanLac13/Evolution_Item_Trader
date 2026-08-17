@@ -126,7 +126,7 @@
 		<comment></comment>	</data>
 	
 	<data name="Evoshop_Quest_Complete_Brother_1" xml:space="preserve">
-		<value>[emote=Surprised][tmp] I speak, surprised, about how my sister changed so much.</value>
+		<value>[emote=Surprised]Wow! And y</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Quest_Complete_Sister_1" xml:space="preserve">
 		<value>[tmp] I mention that I had to use the Ice Stone to evolve and fend off wild Pokémon.[br][emote=Sad][tmp] I apologize for having used it.</value>
