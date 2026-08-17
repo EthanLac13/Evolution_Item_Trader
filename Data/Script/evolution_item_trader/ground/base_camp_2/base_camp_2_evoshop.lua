@@ -132,11 +132,37 @@ function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 	shop_stall_obj.MapLoc = RogueElements.Loc(680, 564)
 	GAME:GetCurrentGround():AddTempObject(shop_stall_obj)
 	
+	-- Create a dummy object that handles interaction with the buyer
+	local buyer_interact = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData(), Dir8.None, Rect(0, 0, 16, 8), RogueElements.Loc(0, 0), true, "EvolutionShopBuyInteract")
+	buyer_interact.MapLoc = RogueElements.Loc(712, 576)
+	-- Set the object to be interactable, and make it recognize the events we set up for it
+	buyer_interact:SetTriggerType(RogueEssence.Ground.GroundEntity.EEntityTriggerTypes.Action)
+	buyer_interact:ReloadEvents()
+	GAME:GetCurrentGround():AddTempObject(buyer_interact)
+	
+	local seller_interact = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData(), Dir8.None, Rect(0, 0, 16, 8), RogueElements.Loc(0, 0), true, "EvolutionShopSellInteract")
+	seller_interact.MapLoc = RogueElements.Loc(736, 576)
+	seller_interact:SetTriggerType(RogueEssence.Ground.GroundEntity.EEntityTriggerTypes.Action)
+	seller_interact:ReloadEvents()
+	GAME:GetCurrentGround():AddTempObject(seller_interact)
+	
 	-- Create carpet
 	animation_data = RogueEssence.Content.ObjAnimData("Evoshop_Carpet", 60)
 	shop_stall_carpet = RogueEssence.Ground.GroundObject(animation_data, Dir8.None, Rect(0, 0, 0, 0), RogueElements.Loc(0, 0), true, "EvolutionShopCarpet")
 	shop_stall_carpet.MapLoc = RogueElements.Loc(696, 523)
 	GAME:GetCurrentGround():AddTempObject(shop_stall_carpet)
+	
+	-- Set collision for shop
+	for i = 86, 96 do
+		map:SetObstacle(i, 67, 1)
+		map:SetObstacle(i, 68, 1)
+		map:SetObstacle(i, 69, 1)
+		map:SetObstacle(i, 72, 1)
+	end
+	map:SetObstacle(86, 70, 1)
+	map:SetObstacle(86, 71, 1)
+	map:SetObstacle(96, 70, 1)
+	map:SetObstacle(96, 71, 1)
 	
 	-- Move over player teammates
 	local teammate = CH("Assembly9")
@@ -459,13 +485,19 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	UI:WaitShowDialogue("We could sell it to make progress towards buying another [color=#FFCEFF]Ice Stone[color],[pause=10] maybe...")
 	GAME:WaitFrames(10)
 	
-	GROUND:CharAnimateTurnTo(brother, Direction.Left, 4)
-	GAME:WaitFrames(6)
-	GROUND:MoveToPosition(brother, brother.Position.X - 24, brother.Position.Y, false, 1.5)
-	
-	GROUND:CharSetEmote(sister, "exclaim", 1)
-	SOUND:PlayBattleSE("EVT_Emote_Exclaim_Surprised")
-	GAME:WaitFrames(30)
+	local coro1 = TASK:BranchCoroutine(function() -- Glaceon is surprised
+		GAME:WaitFrames(20)
+		GROUND:CharSetEmote(sister, "exclaim", 1)
+		SOUND:PlayBattleSE("EVT_Emote_Exclaim_Surprised")
+		GAME:WaitFrames(20)
+		GROUND:EntTurn(player, Direction.UpLeft)
+		GAME:WaitFrames(10)
+	end)
+	local coro2 = TASK:BranchCoroutine(function() -- Eevee brother turns and leaves
+		GROUND:CharAnimateTurnTo(brother, Direction.Left, 4)
+		GROUND:MoveToPosition(brother, brother.Position.X - 24, brother.Position.Y, false, 1.5)
+	end)
+	TASK:JoinCoroutines({coro1,coro2})
 	
 	UI:SetSpeaker(sister)
 	UI:SetSpeakerEmotion("Surprised")
@@ -497,6 +529,7 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	UI:WaitShowDialogue("...All right.")
 	GAME:WaitFrames(10)
 	
+	GROUND:CharAnimateTurnTo(brother, Direction.Left, 4)
 	GROUND:MoveToPosition(brother, brother.Position.X - 216, brother.Position.Y - 24, false, 1.5)
 	GAME:WaitFrames(60)
 	
@@ -508,6 +541,8 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	
 	GROUND:MoveToPosition(brother, brother.Position.X + 240, brother.Position.Y + 24, false, 1.5)
 	GAME:WaitFrames(10)
+	GROUND:EntTurn(player, Direction.Up)
+	GAME:WaitFrames(20)
 	
 	UI:SetSpeaker(brother)
 	UI:SetSpeakerEmotion("Happy")
@@ -567,12 +602,14 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	GAME:WaitFrames(10)
 	
 	-- Play some noises
-	SOUND:PlayBattleSE("_UNK_DUN_Punch")
+	SOUND:PlayBattleSE("_UNK_DUN_Clank")
 	GAME:WaitFrames(15)
 	SOUND:PlayBattleSE("_UNK_DUN_Punch")
 	GAME:WaitFrames(15)
 	SOUND:PlayBattleSE("_UNK_DUN_Punch")
-	GAME:WaitFrames(25)
+	GAME:WaitFrames(15)
+	SOUND:PlayBattleSE("_UNK_DUN_Punch")
+	GAME:WaitFrames(20)
 	SOUND:PlayBattleSE("_UNK_DUN_Clank")
 	GAME:WaitFrames(20)
 	SOUND:PlayBattleSE("_UNK_DUN_Clank")
@@ -596,12 +633,16 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	GROUND:Hide("EvolutionShopQuestCompleteBrother")
 	GROUND:Hide("EvolutionShopQuestCompleteSister")
 	
+	GAME:WaitFrames(10)
+	
 	-- Spawn shop NPCs
 	GROUND:Unhide("EvolutionShopItemBuyer")
 	GROUND:Unhide("EvolutionShopItemSeller")
 	
 	-- Reset camera
 	GAME:MoveCamera(0, 0, 1, true)
+	
+	GAME:WaitFrames(10)
 	
 	-- Set quest as complete and end cutscene
 	SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued = true

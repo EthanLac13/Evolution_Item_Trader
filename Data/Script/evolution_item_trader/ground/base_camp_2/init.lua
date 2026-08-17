@@ -68,11 +68,11 @@ function base_camp_2.EvolutionShopQuestCompleteSister_Action(obj, activator)
 	base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 end
 
-function base_camp_2.EvolutionShopItemBuyer_Action(obj, activator)
-	base_camp_2_evoshop.Interact_ItemBuyer(obj, activator)
+function base_camp_2.EvolutionShopBuyInteract_Action(obj, activator)
+	base_camp_2_evoshop.Interact_ItemBuyer(CH("EvolutionShopItemBuyer"), activator)
 end
-function base_camp_2.EvolutionShopItemSeller_Action(obj, activator)
-	base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
+function base_camp_2.EvolutionShopSellInteract_Action(obj, activator)
+	base_camp_2_evoshop.Interact_ItemSeller(CH("EvolutionShopItemSeller"), activator)
 end
 
 return base_camp_2
