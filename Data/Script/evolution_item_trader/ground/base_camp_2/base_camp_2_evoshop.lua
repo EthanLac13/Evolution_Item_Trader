@@ -410,7 +410,7 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	GAME:WaitFrames(10)
 	
 	UI:SetSpeaker(sister)
-	UI:WaitShowDialogue("Eevee...")
+	UI:WaitShowDialogue("[color=#00FFFF]Eevee[color]...")
 	GAME:WaitFrames(10)
 	
 	UI:SetSpeaker(brother)
