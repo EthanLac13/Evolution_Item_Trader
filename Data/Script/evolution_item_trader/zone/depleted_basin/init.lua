@@ -41,7 +41,6 @@ function depleted_basin.ExitSegment(zone, result, rescue, segmentID, mapID)
 			COMMON.EndDungeonDay(result, 'guildmaster_island', -1, 5, 2)
 		elseif segmentID == 5 then
 			if SV.ModData_EvolutionItemTrader ~= nil then
-				PrintInfo(SV.ModData_EvolutionItemTrader.Boss_Defeated)
 				if SV.ModData_EvolutionItemTrader.Boss_Defeated == true then
 					COMMON.EndDungeonDay(result, 'guildmaster_island', -1, 5, 2)
 				else
