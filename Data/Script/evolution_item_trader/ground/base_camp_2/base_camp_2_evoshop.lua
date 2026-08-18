@@ -97,10 +97,27 @@ function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 	local flareon = base_camp_2_evoshop.SpawnPokemon("flareon", 0, "normal", Gender.Male, 712, 560, Direction.Down, "EvolutionShopItemBuyer")
 	local glaceon = base_camp_2_evoshop.SpawnPokemon("glaceon", 0, "normal", Gender.Female, 736, 560, Direction.Down, "EvolutionShopItemSeller")
 	
+	-- Create a dummy object that handles interaction with the buyer
+	local buyer_interact = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData(), Dir8.None, Rect(0, 0, 16, 8), RogueElements.Loc(0, 0), true, "EvolutionShopBuyInteract")
+	buyer_interact.MapLoc = RogueElements.Loc(712, 576)
+	-- Set the object to be interactable, and make it recognize the events we set up for it
+	buyer_interact:SetTriggerType(RogueEssence.Ground.GroundEntity.EEntityTriggerTypes.Action)
+	buyer_interact:ReloadEvents()
+	GAME:GetCurrentGround():AddTempObject(buyer_interact)
+	
+	-- Do it again for the seller
+	local seller_interact = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData(), Dir8.None, Rect(0, 0, 16, 8), RogueElements.Loc(0, 0), true, "EvolutionShopSellInteract")
+	seller_interact.MapLoc = RogueElements.Loc(736, 576)
+	seller_interact:SetTriggerType(RogueEssence.Ground.GroundEntity.EEntityTriggerTypes.Action)
+	seller_interact:ReloadEvents()
+	GAME:GetCurrentGround():AddTempObject(seller_interact)
+	
 	if not SV.ModData_EvolutionItemTrader.Shopkeeper_Rescued then
 		
 		GROUND:Hide("EvolutionShopItemBuyer")
 		GROUND:Hide("EvolutionShopItemSeller")
+		GROUND:Hide("EvolutionShopBuyInteract")
+		GROUND:Hide("EvolutionShopSellInteract")
 		
 		-- If we haven't reached Canyon Camp yet, have the two mention the quest setup
 		if SV.canyon_camp.ExpositionComplete == false then
@@ -131,20 +148,6 @@ function base_camp_2_evoshop.Spawn_Shopkeepers(map)
 	shop_stall_obj = RogueEssence.Ground.GroundObject(animation_data, Dir8.None, Rect(0, 0, 0, 0), RogueElements.Loc(0, 74), true, "EvolutionShopStall")
 	shop_stall_obj.MapLoc = RogueElements.Loc(680, 564)
 	GAME:GetCurrentGround():AddTempObject(shop_stall_obj)
-	
-	-- Create a dummy object that handles interaction with the buyer
-	local buyer_interact = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData(), Dir8.None, Rect(0, 0, 16, 8), RogueElements.Loc(0, 0), true, "EvolutionShopBuyInteract")
-	buyer_interact.MapLoc = RogueElements.Loc(712, 576)
-	-- Set the object to be interactable, and make it recognize the events we set up for it
-	buyer_interact:SetTriggerType(RogueEssence.Ground.GroundEntity.EEntityTriggerTypes.Action)
-	buyer_interact:ReloadEvents()
-	GAME:GetCurrentGround():AddTempObject(buyer_interact)
-	
-	local seller_interact = RogueEssence.Ground.GroundObject(RogueEssence.Content.ObjAnimData(), Dir8.None, Rect(0, 0, 16, 8), RogueElements.Loc(0, 0), true, "EvolutionShopSellInteract")
-	seller_interact.MapLoc = RogueElements.Loc(736, 576)
-	seller_interact:SetTriggerType(RogueEssence.Ground.GroundEntity.EEntityTriggerTypes.Action)
-	seller_interact:ReloadEvents()
-	GAME:GetCurrentGround():AddTempObject(seller_interact)
 	
 	-- Create carpet
 	animation_data = RogueEssence.Content.ObjAnimData("Evoshop_Carpet", 60)
@@ -279,7 +282,7 @@ function base_camp_2_evoshop.Interact_QuestGiver(obj, activator)
 		GROUND:CharSetEmote(eevee_sister, "glowing", 1)
 		UI:SetSpeaker(eevee_sister)
 		UI:SetSpeakerEmotion("Happy")
-		UI:WaitShowDialogue("I can't wait to get started!")
+		UI:WaitShowDialogue("I can't wait to get started![pause=0] I'll be a [color=#00FF00]Flareon[color] before I know it!")
 		GAME:WaitFrames(10)
 		
 		GROUND:EntTurn(eevee_sister, Direction.Left)
@@ -638,6 +641,8 @@ function base_camp_2_evoshop.Interact_QuestComplete(obj, activator)
 	-- Spawn shop NPCs
 	GROUND:Unhide("EvolutionShopItemBuyer")
 	GROUND:Unhide("EvolutionShopItemSeller")
+	GROUND:Unhide("EvolutionShopBuyInteract")
+	GROUND:Unhide("EvolutionShopSellInteract")
 	
 	-- Reset camera
 	GAME:MoveCamera(0, 0, 1, true)

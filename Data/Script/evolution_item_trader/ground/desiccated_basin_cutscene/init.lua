@@ -156,7 +156,7 @@ function desiccated_basin_cutscene.InitialCutscene(map)
 	UI:SetSpeakerEmotion("Worried")
 	UI:WaitShowDialogue("But we got attacked by some strong-looking Pokémon and separated,[pause=10] and I had to run down here.")
 	UI:SetSpeakerEmotion("Sad")
-	UI:WaitShowDialogue("I was saving the Ice Stone I found for my brother,[pause=10] but I had to use it to fend them off...")
+	UI:WaitShowDialogue("I was saving the [color=#FFCEFF]Ice Stone[color] I found for my brother,[pause=10] but I had to use it to fend them off...")
 	GAME:WaitFrames(10)
 	
 	GROUND:MoveToPosition(glaceon, glaceon.Position.X, glaceon.Position.Y + 24, false, 0.5)
