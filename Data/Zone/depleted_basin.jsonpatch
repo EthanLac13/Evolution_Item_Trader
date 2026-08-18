@@ -12,214 +12,177 @@
           "6": {
             "GenSteps": {
               "_t": "a",
-              "6": {
-                "Key": {
-                  "str": {
-                    "_t": "a",
-                    "_1": [
-                      1,
-                      0,
-                      0
-                    ],
-                    "1": [
+              "5": [
+                {
+                  "Key": {
+                    "str": [
+                      -2,
+                      1
+                    ]
+                  },
+                  "Value": {
+                    "$type": "RogueElements.ResizeFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+                    "AddedSize": {
+                      "X": 16,
+                      "Y": 16
+                    },
+                    "ExpandDir": -1,
+                    "SpaceExpandDir": 7
+                  }
+                }
+              ],
+              "6": [
+                {
+                  "Key": {
+                    "str": [
+                      -2,
                       2
                     ]
+                  },
+                  "Value": {
+                    "$type": "RogueElements.ClampFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+                    "MinSize": {
+                      "X": 0,
+                      "Y": 0
+                    },
+                    "MaxSize": {
+                      "X": 78,
+                      "Y": 54
+                    }
                   }
                 }
-              },
-              "7": {
-                "Key": {
-                  "str": {
-                    "_t": "a",
-                    "_1": [
-                      2,
-                      0,
-                      0
-                    ],
-                    "1": [
+              ],
+              "7": [
+                {
+                  "Key": {
+                    "str": [
+                      -2,
                       3
                     ]
-                  }
-                },
-                "Value": {
-                  "GenericRooms": {
-                    "$values": {
-                      "_t": "a",
-                      "0": {
-                        "Spawn": {
-                          "$type": [
-                            "@@ -3,23 +3,31 @@\n gueE\n-lements\n+ssence.LevelGen\n .RoomGen\n Cros\n@@ -26,13 +26,15 @@\n mGen\n-Cross\n+LoadMap\n %601%5b%5b\n@@ -96,11 +96,10 @@\n gueE\n-lements\n+ssence\n",
-                            0,
-                            2
-                          ],
-                          "MajorWidth": [
-                            {
-                              "Min": 4,
-                              "Max": 4
-                            },
-                            0,
-                            0
-                          ],
-                          "MinorHeight": [
-                            {
-                              "Min": 3,
-                              "Max": 3
-                            },
-                            0,
-                            0
-                          ],
-                          "MajorHeight": [
-                            {
-                              "Min": 4,
-                              "Max": 4
-                            },
-                            0,
-                            0
-                          ],
-                          "MinorWidth": [
-                            {
-                              "Min": 3,
-                              "Max": 3
-                            },
-                            0,
-                            0
-                          ],
-                          "RoomTerrain": [
-                            {
-                              "$type": "RogueEssence.Dungeon.Tile, RogueEssence",
-                              "Data": {
-                                "ID": "floor",
-                                "TileTex": {
-                                  "AutoTileset": "",
-                                  "Associates": [],
-                                  "Layers": [],
-                                  "NeighborCode": -1
-                                },
-                                "StableTex": false
-                              },
-                              "Effect": {
-                                "TileLoc": {
-                                  "X": 0,
-                                  "Y": 0
-                                },
-                                "ID": "",
-                                "Revealed": false,
-                                "Owner": 0,
-                                "TileStates": []
-                              }
-                            }
-                          ],
-                          "PreventChanges": [
-                            1
-                          ],
-                          "MapID": [
-                            "room_depleted_basin_quest_entry"
-                          ]
-                        }
-                      }
-                    }
                   },
-                  "RoomComponents": {
-                    "_t": "a",
-                    "0": {
-                      "Connection": [
-                        8,
-                        32
-                      ]
-                    }
-                  },
-                  "GenericHalls": {
-                    "$values": {
-                      "_t": "a",
-                      "0": {
-                        "Spawn": {
-                          "Brush": {
-                            "$type": [
-                              "RogueElements.DefaultHallBrush, RogueElements",
-                              "RogueElements.TerrainHallBrush, RogueElements"
-                            ],
-                            "Terrain": [
-                              {
-                                "$type": "RogueEssence.Dungeon.Tile, RogueEssence",
-                                "Data": {
-                                  "ID": "grass",
-                                  "TileTex": {
-                                    "AutoTileset": "",
-                                    "Associates": [],
-                                    "Layers": [],
-                                    "NeighborCode": -1
-                                  },
-                                  "StableTex": false
-                                },
-                                "Effect": {
-                                  "TileLoc": {
-                                    "X": 0,
-                                    "Y": 0
-                                  },
-                                  "ID": "",
-                                  "Revealed": false,
-                                  "Owner": 0,
-                                  "TileStates": []
-                                }
-                              }
-                            ],
-                            "Dims": [
-                              {
-                                "X": 1,
-                                "Y": 1
-                              }
-                            ]
+                  "Value": {
+                    "$type": "RogueElements.AddConnectedRoomsStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+                    "Amount": {
+                      "Min": 1,
+                      "Max": 2
+                    },
+                    "HallPercent": 100,
+                    "Filters": [
+                      {
+                        "$type": "RogueElements.RoomFilterComponent, RogueElements",
+                        "Negate": true,
+                        "Components": [
+                          {
+                            "$type": "PMDC.LevelGen.NoConnectRoom, PMDC"
                           },
-                          "Width": {
-                            "Min": [
-                              2,
-                              4
-                            ],
-                            "Max": [
-                              4,
-                              6
-                            ]
-                          },
-                          "Height": {
-                            "Min": [
-                              2,
-                              4
-                            ],
-                            "Max": [
-                              4,
-                              6
-                            ]
+                          {
+                            "$type": "PMDC.LevelGen.UnVaultableRoom, PMDC"
                           }
-                        }
+                        ]
                       }
-                    }
-                  },
-                  "HallComponents": {
-                    "_t": "a",
-                    "0": {
-                      "Connection": [
-                        8,
-                        32
-                      ]
-                    }
-                  }
-                }
-              },
-              "8": {
-                "Key": {
-                  "str": {
-                    "_t": "a",
-                    "_1": [
-                      3,
-                      0,
-                      0
                     ],
-                    "1": [
-                      5
+                    "GenericRooms": {
+                      "$type": "RogueElements.PresetPicker`1[[RogueElements.RoomGen`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements]], RogueElements",
+                      "ToSpawn": {
+                        "$type": "RogueEssence.LevelGen.RoomGenLoadMap`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+                        "RoomTerrain": {
+                          "$type": "RogueEssence.Dungeon.Tile, RogueEssence",
+                          "Data": {
+                            "ID": "floor",
+                            "TileTex": {
+                              "AutoTileset": "",
+                              "Associates": [],
+                              "Layers": [],
+                              "NeighborCode": -1
+                            },
+                            "StableTex": false
+                          },
+                          "Effect": {
+                            "TileLoc": {
+                              "X": 0,
+                              "Y": 0
+                            },
+                            "ID": "",
+                            "Revealed": false,
+                            "Owner": 0,
+                            "TileStates": []
+                          }
+                        },
+                        "PreventChanges": 0,
+                        "MapID": "room_depleted_basin_quest_entry"
+                      }
+                    },
+                    "RoomComponents": [
+                      {
+                        "$type": "PMDC.LevelGen.ConnectivityRoom, PMDC",
+                        "Connection": 8
+                      },
+                      {
+                        "$type": "PMDC.LevelGen.NoConnectRoom, PMDC"
+                      },
+                      {
+                        "$type": "PMDC.LevelGen.NoEventRoom, PMDC"
+                      }
+                    ],
+                    "GenericHalls": {
+                      "$type": "RogueElements.SpawnList`1[[RogueElements.PermissiveRoomGen`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements]], RogueElements",
+                      "$values": [
+                        {
+                          "Spawn": {
+                            "$type": "RogueElements.RoomGenAngledHall`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+                            "HallTurnBias": 0,
+                            "Brush": {
+                              "$type": "RogueElements.DefaultHallBrush, RogueElements"
+                            },
+                            "Width": {
+                              "Min": 2,
+                              "Max": 4
+                            },
+                            "Height": {
+                              "Min": 2,
+                              "Max": 4
+                            }
+                          },
+                          "Rate": 10
+                        }
+                      ]
+                    },
+                    "HallComponents": [
+                      {
+                        "$type": "PMDC.LevelGen.ConnectivityRoom, PMDC",
+                        "Connection": 8
+                      },
+                      {
+                        "$type": "PMDC.LevelGen.NoConnectRoom, PMDC"
+                      },
+                      {
+                        "$type": "PMDC.LevelGen.NoEventRoom, PMDC"
+                      }
                     ]
                   }
                 }
-              }
+              ],
+              "8": [
+                {
+                  "Key": {
+                    "str": [
+                      -2,
+                      4
+                    ]
+                  },
+                  "Value": {
+                    "$type": "RogueElements.ClampFloorStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+                    "MinSize": {
+                      "X": 0,
+                      "Y": 0
+                    },
+                    "MaxSize": {
+                      "X": 0,
+                      "Y": 0
+                    }
+                  }
+                }
+              ]
             }
           }
         }
@@ -256,8 +219,8 @@
                       },
                       "Value": {
                         "$type": "RogueElements.InitGridPlanStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
-                        "CellWidth": 8,
-                        "CellHeight": 8,
+                        "CellWidth": 9,
+                        "CellHeight": 9,
                         "CellX": 4,
                         "CellY": 4,
                         "CellWall": 1,
@@ -273,7 +236,7 @@
                       "Value": {
                         "$type": "RogueElements.GridPathBranch`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
                         "RoomRatio": {
-                          "Min": 90,
+                          "Min": 70,
                           "Max": 91
                         },
                         "BranchRatio": {
@@ -308,6 +271,42 @@
                             },
                             {
                               "Spawn": {
+                                "$type": "RogueEssence.LevelGen.RoomGenPlus`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
+                                "Width": {
+                                  "Min": 7,
+                                  "Max": 10
+                                },
+                                "Height": {
+                                  "Min": 7,
+                                  "Max": 10
+                                },
+                                "Corner": {
+                                  "Min": 1,
+                                  "Max": 3
+                                }
+                              },
+                              "Rate": 2
+                            },
+                            {
+                              "Spawn": {
+                                "$type": "RogueElements.RoomGenBump`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
+                                "Width": {
+                                  "Min": 3,
+                                  "Max": 6
+                                },
+                                "Height": {
+                                  "Min": 3,
+                                  "Max": 6
+                                },
+                                "BumpPercent": {
+                                  "Min": 20,
+                                  "Max": 41
+                                }
+                              },
+                              "Rate": 15
+                            },
+                            {
+                              "Spawn": {
                                 "$type": "RogueElements.RoomGenBump`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
                                 "Width": {
                                   "Min": 4,
@@ -319,10 +318,10 @@
                                 },
                                 "BumpPercent": {
                                   "Min": 30,
-                                  "Max": 101
+                                  "Max": 51
                                 }
                               },
-                              "Rate": 5
+                              "Rate": 10
                             },
                             {
                               "Spawn": {
@@ -337,20 +336,6 @@
                                 }
                               },
                               "Rate": 10
-                            },
-                            {
-                              "Spawn": {
-                                "$type": "RogueElements.RoomGenCave`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
-                                "Width": {
-                                  "Min": 7,
-                                  "Max": 10
-                                },
-                                "Height": {
-                                  "Min": 7,
-                                  "Max": 10
-                                }
-                              },
-                              "Rate": 2
                             }
                           ]
                         },
@@ -491,7 +476,7 @@
                         "Respawn": {
                           "$type": "PMDC.Dungeon.RespawnFromEligibleEvent, PMDC",
                           "MaxFoes": 10,
-                          "RespawnTime": 90
+                          "RespawnTime": 100
                         },
                         "MaxFoes": 0,
                         "RespawnTime": 0
@@ -560,15 +545,15 @@
                         "$type": "RogueElements.BlobWaterStep`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
                         "Blobs": {
                           "Min": 3,
-                          "Max": 8
+                          "Max": 7
                         },
                         "GenerateScale": {
-                          "Min": 5,
+                          "Min": 4,
                           "Max": 7
                         },
                         "AreaScale": {
                           "Min": 2,
-                          "Max": 5
+                          "Max": 4
                         },
                         "BlobStencil": {
                           "$type": "RogueElements.MultiBlobStencil`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueElements",
@@ -789,7 +774,7 @@
                           "$type": "RogueElements.ContextSpawner`2[[RogueEssence.LevelGen.MapGenContext, RogueEssence],[RogueEssence.Dungeon.EffectTile, RogueEssence]], RogueElements",
                           "Amount": {
                             "Min": 12,
-                            "Max": 17
+                            "Max": 16
                           }
                         }
                       }
@@ -807,8 +792,8 @@
                         "Spawn": {
                           "$type": "RogueEssence.LevelGen.MoneyDivSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
                           "DivAmount": {
-                            "Min": 3,
-                            "Max": 5
+                            "Min": 4,
+                            "Max": 6
                           }
                         }
                       }
@@ -1463,8 +1448,8 @@
                         "Spawn": {
                           "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
                           "Amount": {
-                            "Min": 5,
-                            "Max": 8
+                            "Min": 6,
+                            "Max": 9
                           }
                         },
                         "Ally": false,
@@ -1500,9 +1485,7 @@
               },
               "Name": {
                 "DefaultText": "Desiccated Basin\\nB{0}F",
-                "LocalTexts": {
-                  "fr": "Bassin Desséché\\n{0}SS"
-                }
+                "LocalTexts": {}
               },
               "Priority": {
                 "str": [
@@ -1519,11 +1502,11 @@
               },
               "StartAmount": {
                 "Min": 160,
-                "Max": 171
+                "Max": 172
               },
               "AddAmount": {
                 "Min": 14,
-                "Max": 19
+                "Max": 20
               },
               "ModStates": [
                 {
@@ -2560,7 +2543,7 @@
                         "poison_fang"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb",
+                      "Tactic": "wander_dumb_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2595,7 +2578,7 @@
                         "stomp"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb",
+                      "Tactic": "wander_dumb_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2608,7 +2591,7 @@
                         }
                       ]
                     },
-                    "Role": 1
+                    "Role": 0
                   },
                   "Rate": 10,
                   "Range": {
@@ -2620,34 +2603,52 @@
                   "Spawn": {
                     "Spawn": {
                       "BaseForm": {
-                        "Species": "deino",
+                        "Species": "shelgon",
                         "Form": 0,
                         "Skin": "",
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 28,
-                        "Max": 30
+                        "Min": 31,
+                        "Max": 33
                       },
                       "SpecifiedSkills": [
-                        "roar",
-                        "crunch"
+                        "dragon_breath",
+                        "protect",
+                        "ember"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb",
+                      "Tactic": "wander_dumb_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
                           "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
                         },
                         {
+                          "$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+                          "Statuses": [
+                            {
+                              "Spawn": {
+                                "ID": "sleep",
+                                "StatusStates": [
+                                  {
+                                    "$type": "RogueEssence.Dungeon.CountDownState, RogueEssence",
+                                    "Counter": -1
+                                  }
+                                ]
+                              },
+                              "Rate": 10
+                            }
+                          ]
+                        },
+                        {
                           "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-                          "StartAt": 2,
+                          "StartAt": 3,
                           "Remove": false
                         }
                       ]
                     },
-                    "Role": 0
+                    "Role": 3
                   },
                   "Rate": 1,
                   "Range": {
@@ -2659,34 +2660,52 @@
                   "Spawn": {
                     "Spawn": {
                       "BaseForm": {
-                        "Species": "deino",
+                        "Species": "shelgon",
                         "Form": 0,
                         "Skin": "",
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 28,
-                        "Max": 30
+                        "Min": 31,
+                        "Max": 33
                       },
                       "SpecifiedSkills": [
-                        "roar",
-                        "crunch"
+                        "dragon_breath",
+                        "protect",
+                        "ember"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb",
+                      "Tactic": "wander_dumb_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
                           "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
                         },
                         {
+                          "$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
+                          "Statuses": [
+                            {
+                              "Spawn": {
+                                "ID": "sleep",
+                                "StatusStates": [
+                                  {
+                                    "$type": "RogueEssence.Dungeon.CountDownState, RogueEssence",
+                                    "Counter": -1
+                                  }
+                                ]
+                              },
+                              "Rate": 10
+                            }
+                          ]
+                        },
+                        {
                           "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-                          "StartAt": 2,
+                          "StartAt": 3,
                           "Remove": false
                         }
                       ]
                     },
-                    "Role": 0
+                    "Role": 3
                   },
                   "Rate": 3,
                   "Range": {
@@ -2704,15 +2723,15 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 25,
-                        "Max": 27
+                        "Min": 27,
+                        "Max": 29
                       },
                       "SpecifiedSkills": [
                         "slash",
                         "dual_chop"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb",
+                      "Tactic": "wander_dumb_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2743,24 +2762,25 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 31,
-                        "Max": 33
+                        "Min": 32,
+                        "Max": 34
                       },
                       "SpecifiedSkills": [
                         "scary_face",
+                        "slash",
                         "dual_chop"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb",
+                      "Tactic": "wander_dumb_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
+                        {
+                          "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+                        },
                         {
                           "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
                           "StartAt": 3,
                           "Remove": false
-                        },
-                        {
-                          "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
                         }
                       ]
                     },
@@ -2768,7 +2788,7 @@
                   },
                   "Rate": 2,
                   "Range": {
-                    "Min": 2,
+                    "Min": 0,
                     "Max": 5
                   }
                 },
@@ -2782,8 +2802,8 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 30,
-                        "Max": 32
+                        "Min": 31,
+                        "Max": 33
                       },
                       "SpecifiedSkills": [
                         "giga_drain",
@@ -2791,7 +2811,7 @@
                         "ancient_power"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb",
+                      "Tactic": "wander_dumb_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2822,8 +2842,8 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 30,
-                        "Max": 32
+                        "Min": 31,
+                        "Max": 33
                       },
                       "SpecifiedSkills": [
                         "salt_cure",
@@ -2831,8 +2851,8 @@
                         "headbutt",
                         "iron_defense"
                       ],
-                      "Intrinsic": "",
-                      "Tactic": "wander_dumb",
+                      "Intrinsic": "purifying_salt",
+                      "Tactic": "wander_dumb_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2867,88 +2887,23 @@
                   }
                 },
                 {
+                  "Spawn": 2,
+                  "Rate": 4,
+                  "Range": {
+                    "Min": 2,
+                    "Max": 5
+                  }
+                },
+                {
                   "Spawn": 3,
-                  "Rate": 10,
+                  "Rate": 6,
                   "Range": {
                     "Min": 2,
                     "Max": 5
                   }
                 }
               ],
-              "SpecificSpawns": [
-                {
-                  "Spawn": {
-                    "Explorer": false,
-                    "Spawns": [
-                      {
-                        "BaseForm": {
-                          "Species": "haxorus",
-                          "Form": -1,
-                          "Skin": "",
-                          "Gender": -1
-                        },
-                        "Level": {
-                          "Min": 50,
-                          "Max": 51
-                        },
-                        "SpecifiedSkills": [
-                          "assurance",
-                          "slash",
-                          "outrage",
-                          "dragon_dance"
-                        ],
-                        "Intrinsic": "",
-                        "Tactic": "wander_smart",
-                        "SpawnConditions": [],
-                        "SpawnFeatures": [
-                          {
-                            "$type": "PMDC.LevelGen.MobSpawnItem, PMDC",
-                            "Items": [
-                              {
-                                "Spawn": {
-                                  "ID": "held_dragon_scale",
-                                  "Cursed": false,
-                                  "HiddenValue": "",
-                                  "Amount": 0,
-                                  "Price": 0
-                                },
-                                "Rate": 10
-                              }
-                            ],
-                            "MapStartOnly": false,
-                            "Chance": {
-                              "Numerator": 0,
-                              "Denominator": 0
-                            }
-                          },
-                          {
-                            "$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
-                            "Statuses": [
-                              {
-                                "Spawn": {
-                                  "ID": "sleep",
-                                  "StatusStates": [
-                                    {
-                                      "$type": "RogueEssence.Dungeon.CountState, RogueEssence",
-                                      "Count": -1
-                                    }
-                                  ]
-                                },
-                                "Rate": 10
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 4,
-                    "Max": 5
-                  }
-                }
-              ]
+              "SpecificSpawns": []
             },
             {
               "$type": "RogueEssence.LevelGen.TileSpawnZoneStep, RogueEssence",
@@ -2973,24 +2928,7 @@
                   "Rate": 10,
                   "Range": {
                     "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_trip",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
+                    "Max": 5
                   }
                 },
                 {
@@ -3000,14 +2938,14 @@
                       "Y": 0
                     },
                     "ID": "trap_sticky",
-                    "Revealed": true,
+                    "Revealed": false,
                     "Owner": 0,
                     "TileStates": []
                   },
                   "Rate": 10,
                   "Range": {
                     "Min": 0,
-                    "Max": 9
+                    "Max": 5
                   }
                 },
                 {
@@ -3024,7 +2962,41 @@
                   "Rate": 10,
                   "Range": {
                     "Min": 0,
-                    "Max": 9
+                    "Max": 5
+                  }
+                },
+                {
+                  "Spawn": {
+                    "TileLoc": {
+                      "X": 0,
+                      "Y": 0
+                    },
+                    "ID": "trap_chestnut",
+                    "Revealed": false,
+                    "Owner": 0,
+                    "TileStates": []
+                  },
+                  "Rate": 10,
+                  "Range": {
+                    "Min": 0,
+                    "Max": 5
+                  }
+                },
+                {
+                  "Spawn": {
+                    "TileLoc": {
+                      "X": 0,
+                      "Y": 0
+                    },
+                    "ID": "trap_grimy",
+                    "Revealed": false,
+                    "Owner": 0,
+                    "TileStates": []
+                  },
+                  "Rate": 10,
+                  "Range": {
+                    "Min": 0,
+                    "Max": 5
                   }
                 },
                 {
@@ -3034,439 +3006,14 @@
                       "Y": 0
                     },
                     "ID": "trap_mud",
-                    "Revealed": true,
+                    "Revealed": false,
                     "Owner": 0,
                     "TileStates": []
                   },
                   "Rate": 10,
                   "Range": {
                     "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_hunger",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_trip",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_sticky",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_pp_leech",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_mud",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_hunger",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_trip",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_sticky",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_pp_leech",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_mud",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_hunger",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_trip",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_sticky",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_pp_leech",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_mud",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_hunger",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_trip",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_sticky",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_pp_leech",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_mud",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_hunger",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_trip",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_sticky",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_pp_leech",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
-                  }
-                },
-                {
-                  "Spawn": {
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    },
-                    "ID": "trap_mud",
-                    "Revealed": true,
-                    "Owner": 0,
-                    "TileStates": []
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 9
+                    "Max": 5
                   }
                 }
               ]
@@ -3516,13 +3063,13 @@
               "SpreadPlan": {
                 "$type": "RogueEssence.LevelGen.SpreadPlanSpaced, RogueEssence",
                 "FloorSpacing": {
-                  "Min": 3,
-                  "Max": 7
+                  "Min": 2,
+                  "Max": 5
                 },
                 "BeginStart": false,
                 "FloorRange": {
                   "Min": 0,
-                  "Max": 9
+                  "Max": 5
                 }
               },
               "ModStates": []
@@ -3572,13 +3119,127 @@
               "SpreadPlan": {
                 "$type": "RogueEssence.LevelGen.SpreadPlanSpaced, RogueEssence",
                 "FloorSpacing": {
-                  "Min": 4,
-                  "Max": 7
+                  "Min": 2,
+                  "Max": 5
                 },
                 "BeginStart": false,
                 "FloorRange": {
                   "Min": 0,
-                  "Max": 9
+                  "Max": 5
+                }
+              },
+              "ModStates": []
+            },
+            {
+              "$type": "RogueEssence.LevelGen.SpreadStepZoneStep, RogueEssence",
+              "StepPriority": {
+                "str": [
+                  6,
+                  1
+                ]
+              },
+              "Spawns": {
+                "$type": "RogueElements.SpawnList`1[[RogueElements.IGenStep, RogueElements]], RogueElements",
+                "$values": [
+                  {
+                    "Spawn": {
+                      "$type": "RogueElements.RandomSpawnStep`2[[RogueEssence.LevelGen.ListMapGenContext, RogueEssence],[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                      "Spawn": {
+                        "$type": "RogueElements.PickerSpawner`2[[RogueEssence.LevelGen.ListMapGenContext, RogueEssence],[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                        "Picker": {
+                          "$type": "RogueElements.PresetMultiRand`1[[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                          "ToSpawn": [
+                            {
+                              "$type": "RogueElements.PresetPicker`1[[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                              "ToSpawn": {
+                                "IsMoney": false,
+                                "Cursed": false,
+                                "Value": "apricorn_brown",
+                                "HiddenValue": "",
+                                "Amount": 0,
+                                "Price": 0,
+                                "TileLoc": {
+                                  "X": 0,
+                                  "Y": 0
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "Rate": 10
+                  },
+                  {
+                    "Spawn": {
+                      "$type": "RogueElements.RandomSpawnStep`2[[RogueEssence.LevelGen.ListMapGenContext, RogueEssence],[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                      "Spawn": {
+                        "$type": "RogueElements.PickerSpawner`2[[RogueEssence.LevelGen.ListMapGenContext, RogueEssence],[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                        "Picker": {
+                          "$type": "RogueElements.PresetMultiRand`1[[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                          "ToSpawn": [
+                            {
+                              "$type": "RogueElements.PresetPicker`1[[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                              "ToSpawn": {
+                                "IsMoney": false,
+                                "Cursed": false,
+                                "Value": "apricorn_red",
+                                "HiddenValue": "",
+                                "Amount": 0,
+                                "Price": 0,
+                                "TileLoc": {
+                                  "X": 0,
+                                  "Y": 0
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "Rate": 10
+                  },
+                  {
+                    "Spawn": {
+                      "$type": "RogueElements.RandomSpawnStep`2[[RogueEssence.LevelGen.ListMapGenContext, RogueEssence],[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                      "Spawn": {
+                        "$type": "RogueElements.PickerSpawner`2[[RogueEssence.LevelGen.ListMapGenContext, RogueEssence],[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                        "Picker": {
+                          "$type": "RogueElements.PresetMultiRand`1[[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                          "ToSpawn": [
+                            {
+                              "$type": "RogueElements.PresetPicker`1[[RogueEssence.Dungeon.MapItem, RogueEssence]], RogueElements",
+                              "ToSpawn": {
+                                "IsMoney": false,
+                                "Cursed": false,
+                                "Value": "apricorn_white",
+                                "HiddenValue": "",
+                                "Amount": 0,
+                                "Price": 0,
+                                "TileLoc": {
+                                  "X": 0,
+                                  "Y": 0
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "Rate": 10
+                  }
+                ]
+              },
+              "SpreadPlan": {
+                "$type": "RogueEssence.LevelGen.SpreadPlanSpaced, RogueEssence",
+                "FloorSpacing": {
+                  "Min": 2,
+                  "Max": 4
+                },
+                "BeginStart": false,
+                "FloorRange": {
+                  "Min": 0,
+                  "Max": 5
                 }
               },
               "ModStates": []
@@ -3596,64 +3257,7 @@
                   "Spawn": {
                     "IsMoney": false,
                     "Cursed": false,
-                    "Value": "evo_moon_stone",
-                    "HiddenValue": "",
-                    "Amount": 0,
-                    "Price": 0,
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    }
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 5
-                  }
-                },
-                {
-                  "Spawn": {
-                    "IsMoney": false,
-                    "Cursed": false,
-                    "Value": "evo_shiny_stone",
-                    "HiddenValue": "",
-                    "Amount": 0,
-                    "Price": 0,
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    }
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 5
-                  }
-                },
-                {
-                  "Spawn": {
-                    "IsMoney": false,
-                    "Cursed": false,
-                    "Value": "evo_dusk_stone",
-                    "HiddenValue": "",
-                    "Amount": 0,
-                    "Price": 0,
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    }
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 5
-                  }
-                },
-                {
-                  "Spawn": {
-                    "IsMoney": false,
-                    "Cursed": false,
-                    "Value": "evo_dawn_stone",
+                    "Value": "evo_fire_stone",
                     "HiddenValue": "",
                     "Amount": 0,
                     "Price": 0,
@@ -3691,7 +3295,83 @@
                   "Spawn": {
                     "IsMoney": false,
                     "Cursed": false,
+                    "Value": "evo_dawn_stone",
+                    "HiddenValue": "",
+                    "Amount": 0,
+                    "Price": 0,
+                    "TileLoc": {
+                      "X": 0,
+                      "Y": 0
+                    }
+                  },
+                  "Rate": 10,
+                  "Range": {
+                    "Min": 0,
+                    "Max": 5
+                  }
+                },
+                {
+                  "Spawn": {
+                    "IsMoney": false,
+                    "Cursed": false,
+                    "Value": "evo_dusk_stone",
+                    "HiddenValue": "",
+                    "Amount": 0,
+                    "Price": 0,
+                    "TileLoc": {
+                      "X": 0,
+                      "Y": 0
+                    }
+                  },
+                  "Rate": 10,
+                  "Range": {
+                    "Min": 0,
+                    "Max": 5
+                  }
+                },
+                {
+                  "Spawn": {
+                    "IsMoney": false,
+                    "Cursed": false,
+                    "Value": "evo_shiny_stone",
+                    "HiddenValue": "",
+                    "Amount": 0,
+                    "Price": 0,
+                    "TileLoc": {
+                      "X": 0,
+                      "Y": 0
+                    }
+                  },
+                  "Rate": 10,
+                  "Range": {
+                    "Min": 0,
+                    "Max": 5
+                  }
+                },
+                {
+                  "Spawn": {
+                    "IsMoney": false,
+                    "Cursed": false,
                     "Value": "evo_sun_stone",
+                    "HiddenValue": "",
+                    "Amount": 0,
+                    "Price": 0,
+                    "TileLoc": {
+                      "X": 0,
+                      "Y": 0
+                    }
+                  },
+                  "Rate": 10,
+                  "Range": {
+                    "Min": 0,
+                    "Max": 5
+                  }
+                },
+                {
+                  "Spawn": {
+                    "IsMoney": false,
+                    "Cursed": false,
+                    "Value": "evo_moon_stone",
                     "HiddenValue": "",
                     "Amount": 0,
                     "Price": 0,
@@ -3762,25 +3442,6 @@
                     "Min": 0,
                     "Max": 5
                   }
-                },
-                {
-                  "Spawn": {
-                    "IsMoney": false,
-                    "Cursed": false,
-                    "Value": "evo_fire_stone",
-                    "HiddenValue": "",
-                    "Amount": 0,
-                    "Price": 0,
-                    "TileLoc": {
-                      "X": 0,
-                      "Y": 0
-                    }
-                  },
-                  "Rate": 10,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 5
-                  }
                 }
               ],
               "ItemThemes": [
@@ -3789,8 +3450,8 @@
                     "$type": "PMDC.LevelGen.ItemThemeNone, PMDC",
                     "SpecialRatio": 40,
                     "Amount": {
-                      "Min": 3,
-                      "Max": 5
+                      "Min": 4,
+                      "Max": 6
                     }
                   },
                   "Rate": 30,
@@ -3923,87 +3584,77 @@
       ],
       "6": [
         {
-          "$type": "RogueEssence.LevelGen.SingularSegment, RogueEssence",
-          "BaseFloor": {
-            "$type": "RogueEssence.LevelGen.LoadGen, RogueEssence",
-            "GenSteps": [
-              {
-                "Key": {
-                  "str": [
-                    -7
-                  ]
+          "$type": "RogueEssence.LevelGen.LayeredSegment, RogueEssence",
+          "Floors": [
+            {
+              "$type": "RogueEssence.LevelGen.LoadGen, RogueEssence",
+              "GenSteps": [
+                {
+                  "Key": {
+                    "str": [
+                      -7
+                    ]
+                  },
+                  "Value": {
+                    "$type": "RogueEssence.LevelGen.MappedRoomStep`1[[RogueEssence.LevelGen.MapLoadContext, RogueEssence]], RogueEssence",
+                    "MapID": "room_desiccated_basin_boss"
+                  }
                 },
-                "Value": {
-                  "$type": "RogueEssence.LevelGen.MappedRoomStep`1[[RogueEssence.LevelGen.MapLoadContext, RogueEssence]], RogueEssence",
-                  "MapID": "room_desiccated_basin_boss"
-                }
-              },
-              {
-                "Key": {
-                  "str": [
-                    -6
-                  ]
-                },
-                "Value": {
-                  "$type": "PMDC.LevelGen.MapTimeLimitStep`1[[RogueEssence.LevelGen.MapLoadContext, RogueEssence]], PMDC",
-                  "TimeLimit": 600
-                }
-              },
-              {
-                "Key": {
-                  "str": [
-                    -6
-                  ]
-                },
-                "Value": {
-                  "$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapLoadContext, RogueEssence]], RogueEssence",
-                  "Effect": {
-                    "UniversalStates": [],
-                    "BeforeTryActions": [],
-                    "BeforeActions": [],
-                    "OnActions": [],
-                    "BeforeExplosions": [],
-                    "BeforeHits": [],
-                    "OnHits": [],
-                    "OnHitTiles": [],
-                    "AfterActions": [],
-                    "ElementEffects": [],
-                    "OnEquips": [],
-                    "OnPickups": [],
-                    "BeforeStatusAdds": [],
-                    "OnStatusAdds": [],
-                    "OnStatusRemoves": [],
-                    "OnMapStatusAdds": [],
-                    "OnMapStatusRemoves": [],
-                    "OnMapStarts": [],
-                    "OnTurnStarts": [],
-                    "OnTurnEnds": [],
-                    "OnMapTurnEnds": [],
-                    "OnWalks": [],
-                    "OnDeaths": [],
-                    "OnRefresh": [],
-                    "OnMapRefresh": [
-                      {
-                        "Key": {
-                          "str": [
-                            0
-                          ]
-                        },
-                        "Value": {
-                          "$type": "PMDC.Dungeon.MapNoRescueEvent, PMDC"
+                {
+                  "Key": {
+                    "str": [
+                      -6
+                    ]
+                  },
+                  "Value": {
+                    "$type": "RogueEssence.LevelGen.MapEffectStep`1[[RogueEssence.LevelGen.MapLoadContext, RogueEssence]], RogueEssence",
+                    "Effect": {
+                      "UniversalStates": [],
+                      "BeforeTryActions": [],
+                      "BeforeActions": [],
+                      "OnActions": [],
+                      "BeforeExplosions": [],
+                      "BeforeHits": [],
+                      "OnHits": [],
+                      "OnHitTiles": [],
+                      "AfterActions": [],
+                      "ElementEffects": [],
+                      "OnEquips": [],
+                      "OnPickups": [],
+                      "BeforeStatusAdds": [],
+                      "OnStatusAdds": [],
+                      "OnStatusRemoves": [],
+                      "OnMapStatusAdds": [],
+                      "OnMapStatusRemoves": [],
+                      "OnMapStarts": [],
+                      "OnTurnStarts": [],
+                      "OnTurnEnds": [],
+                      "OnMapTurnEnds": [],
+                      "OnWalks": [],
+                      "OnDeaths": [],
+                      "OnRefresh": [],
+                      "OnMapRefresh": [
+                        {
+                          "Key": {
+                            "str": [
+                              0
+                            ]
+                          },
+                          "Value": {
+                            "$type": "PMDC.Dungeon.MapNoRescueEvent, PMDC"
+                          }
                         }
-                      }
-                    ],
-                    "ModifyHPs": [],
-                    "RestoreHPs": [],
-                    "InitActionData": []
+                      ],
+                      "ModifyHPs": [],
+                      "RestoreHPs": [],
+                      "InitActionData": []
+                    }
                   }
                 }
-              }
-            ],
-            "Comment": ""
-          },
-          "FloorSpan": 1,
+              ],
+              "Comment": ""
+            }
+          ],
           "ZoneSteps": [],
           "IsRelevant": false,
           "Comment": ""
