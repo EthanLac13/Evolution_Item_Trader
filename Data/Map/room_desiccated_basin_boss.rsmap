@@ -99,7 +99,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 140,
+"HP": 136,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -190,7 +190,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 35,
+"Level": 33,
 "EXP": 0,
 "MaxHPBonus": 100,
 "AtkBonus": 0,
@@ -295,8 +295,8 @@
 "Skills": [
 {
 "Element": {
-"SkillNum": "smack_down",
-"Charges": 14,
+"SkillNum": "leer",
+"Charges": 16,
 "Enabled": true,
 "Sealed": false
 },
@@ -347,7 +347,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 127,
+"HP": 123,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -357,29 +357,29 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Itemless Normal Wander",
+"DefaultText": "Itemless Dumb Wander",
 "LocalTexts": {}
 },
 "Released": false,
 "Comment": "",
-"ID": "wander_normal_itemless",
+"ID": "wander_dumb_itemless",
 "Assignable": false,
 "Plans": [
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"AttackPattern": 1,
+"PositionPattern": 0,
+"IQ": 32,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
-"AttackRange": 0,
-"StatusRange": 0,
-"SelfStatusRange": 4,
+"AttackRange": 4,
+"StatusRange": 4,
+"SelfStatusRange": 3,
 "AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 224,
+"IQ": 160,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -389,7 +389,7 @@
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 224,
+"IQ": 160,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -399,7 +399,7 @@
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 160,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -443,7 +443,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 33,
+"Level": 31,
 "EXP": 0,
 "MaxHPBonus": 70,
 "AtkBonus": 0,
@@ -453,8 +453,8 @@
 "SpeedBonus": 0,
 "BaseSkills": [
 {
-"SkillNum": "smack_down",
-"Charges": 14,
+"SkillNum": "leer",
+"Charges": 16,
 "CanForget": true
 },
 {
@@ -600,7 +600,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 115,
+"HP": 111,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -696,7 +696,7 @@
 "Skin": "normal",
 "Gender": 2
 },
-"Level": 33,
+"Level": 31,
 "EXP": 0,
 "MaxHPBonus": 70,
 "AtkBonus": 0,
@@ -853,7 +853,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 149,
+"HP": 144,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -953,7 +953,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 33,
+"Level": 31,
 "EXP": 0,
 "MaxHPBonus": 70,
 "AtkBonus": 0,
@@ -1110,7 +1110,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 124,
+"HP": 120,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1206,7 +1206,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 33,
+"Level": 31,
 "EXP": 0,
 "MaxHPBonus": 70,
 "AtkBonus": 0,
@@ -1363,7 +1363,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 80,
+"HP": 77,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1463,7 +1463,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 32,
+"Level": 30,
 "EXP": 0,
 "MaxHPBonus": 20,
 "AtkBonus": 0,
@@ -1620,7 +1620,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 80,
+"HP": 77,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1720,7 +1720,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 32,
+"Level": 30,
 "EXP": 0,
 "MaxHPBonus": 20,
 "AtkBonus": 0,
@@ -1877,7 +1877,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 80,
+"HP": 77,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1977,7 +1977,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 32,
+"Level": 30,
 "EXP": 0,
 "MaxHPBonus": 20,
 "AtkBonus": 0,
@@ -2134,7 +2134,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 80,
+"HP": 77,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -2234,7 +2234,7 @@
 "Skin": "normal",
 "Gender": 2
 },
-"Level": 32,
+"Level": 30,
 "EXP": 0,
 "MaxHPBonus": 20,
 "AtkBonus": 0,
