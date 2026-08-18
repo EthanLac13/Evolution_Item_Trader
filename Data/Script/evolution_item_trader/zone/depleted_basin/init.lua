@@ -40,6 +40,15 @@ function depleted_basin.ExitSegment(zone, result, rescue, segmentID, mapID)
 		if segmentID == 0 then
 			COMMON.EndDungeonDay(result, 'guildmaster_island', -1, 5, 2)
 		elseif segmentID == 5 then
+			if SV.ModData_EvolutionItemTrader ~= nil then
+				if SV.ModData_EvolutionItemTrader.Boss_Defeated then
+					COMMON.EndDungeonDay(result, SV.checkpoint.Zone, SV.checkpoint.Segment, SV.checkpoint.Map, SV.checkpoint.Entry)
+				else
+					GAME:EnterGroundMap("desiccated_basin_cutscene", "Entrance")
+				end
+			else
+				COMMON.EndDungeonDay(result, SV.checkpoint.Zone, SV.checkpoint.Segment, SV.checkpoint.Map, SV.checkpoint.Entry)
+			end
 			GAME:EnterGroundMap("desiccated_basin_cutscene", "Entrance")
 		elseif segmentID == 6 then
 			SV.ModData_EvolutionItemTrader.Boss_Defeated = true
