@@ -1448,8 +1448,8 @@
                         "Spawn": {
                           "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
                           "Amount": {
-                            "Min": 6,
-                            "Max": 9
+                            "Min": 5,
+                            "Max": 8
                           }
                         },
                         "Ally": false,
@@ -2527,14 +2527,53 @@
                   "Spawn": {
                     "Spawn": {
                       "BaseForm": {
+                        "Species": "axew",
+                        "Form": 0,
+                        "Skin": "",
+                        "Gender": -1
+                      },
+                      "Level": {
+                        "Min": 27,
+                        "Max": 28
+                      },
+                      "SpecifiedSkills": [
+                        "slash",
+                        "dual_chop"
+                      ],
+                      "Intrinsic": "",
+                      "Tactic": "wander_dumb_itemless",
+                      "SpawnConditions": [],
+                      "SpawnFeatures": [
+                        {
+                          "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+                        },
+                        {
+                          "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+                          "StartAt": 2,
+                          "Remove": false
+                        }
+                      ]
+                    },
+                    "Role": 0
+                  },
+                  "Rate": 12,
+                  "Range": {
+                    "Min": 0,
+                    "Max": 5
+                  }
+                },
+                {
+                  "Spawn": {
+                    "Spawn": {
+                      "BaseForm": {
                         "Species": "golbat",
                         "Form": 0,
                         "Skin": "",
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 30,
-                        "Max": 32
+                        "Min": 29,
+                        "Max": 30
                       },
                       "SpecifiedSkills": [
                         "confuse_ray",
@@ -2569,13 +2608,13 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 30,
-                        "Max": 32
+                        "Min": 29,
+                        "Max": 30
                       },
                       "SpecifiedSkills": [
                         "roar",
-                        "howl",
-                        "stomp"
+                        "stomp",
+                        "astonish"
                       ],
                       "Intrinsic": "",
                       "Tactic": "wander_dumb_itemless",
@@ -2593,7 +2632,7 @@
                     },
                     "Role": 0
                   },
-                  "Rate": 10,
+                  "Rate": 8,
                   "Range": {
                     "Min": 0,
                     "Max": 5
@@ -2609,8 +2648,8 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 31,
-                        "Max": 33
+                        "Min": 30,
+                        "Max": 31
                       },
                       "SpecifiedSkills": [
                         "dragon_breath",
@@ -2648,7 +2687,7 @@
                         }
                       ]
                     },
-                    "Role": 3
+                    "Role": 0
                   },
                   "Rate": 1,
                   "Range": {
@@ -2666,8 +2705,8 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 31,
-                        "Max": 33
+                        "Min": 30,
+                        "Max": 31
                       },
                       "SpecifiedSkills": [
                         "dragon_breath",
@@ -2705,7 +2744,7 @@
                         }
                       ]
                     },
-                    "Role": 3
+                    "Role": 0
                   },
                   "Rate": 3,
                   "Range": {
@@ -2717,18 +2756,19 @@
                   "Spawn": {
                     "Spawn": {
                       "BaseForm": {
-                        "Species": "axew",
+                        "Species": "cradily",
                         "Form": 0,
                         "Skin": "",
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 27,
-                        "Max": 29
+                        "Min": 31,
+                        "Max": 32
                       },
                       "SpecifiedSkills": [
-                        "slash",
-                        "dual_chop"
+                        "giga_drain",
+                        "acid",
+                        "ancient_power"
                       ],
                       "Intrinsic": "",
                       "Tactic": "wander_dumb_itemless",
@@ -2739,14 +2779,50 @@
                         },
                         {
                           "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-                          "StartAt": 2,
+                          "StartAt": 3,
                           "Remove": false
                         }
                       ]
                     },
                     "Role": 0
                   },
-                  "Rate": 12,
+                  "Rate": 6,
+                  "Range": {
+                    "Min": 0,
+                    "Max": 5
+                  }
+                },
+                {
+                  "Spawn": {
+                    "Spawn": {
+                      "BaseForm": {
+                        "Species": "naclstack",
+                        "Form": 0,
+                        "Skin": "",
+                        "Gender": -1
+                      },
+                      "Level": {
+                        "Min": 31,
+                        "Max": 32
+                      },
+                      "SpecifiedSkills": [
+                        "salt_cure",
+                        "recover",
+                        "headbutt",
+                        "iron_defense"
+                      ],
+                      "Intrinsic": "purifying_salt",
+                      "Tactic": "wander_dumb_itemless",
+                      "SpawnConditions": [],
+                      "SpawnFeatures": [
+                        {
+                          "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+                        }
+                      ]
+                    },
+                    "Role": 0
+                  },
+                  "Rate": 6,
                   "Range": {
                     "Min": 0,
                     "Max": 5
@@ -2763,7 +2839,7 @@
                       },
                       "Level": {
                         "Min": 32,
-                        "Max": 34
+                        "Max": 33
                       },
                       "SpecifiedSkills": [
                         "scary_face",
@@ -2796,19 +2872,19 @@
                   "Spawn": {
                     "Spawn": {
                       "BaseForm": {
-                        "Species": "cradily",
+                        "Species": "exploud",
                         "Form": 0,
                         "Skin": "",
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 31,
+                        "Min": 32,
                         "Max": 33
                       },
                       "SpecifiedSkills": [
-                        "giga_drain",
-                        "acid",
-                        "ancient_power"
+                        "howl",
+                        "stomp",
+                        "astonish"
                       ],
                       "Intrinsic": "",
                       "Tactic": "wander_dumb_itemless",
@@ -2824,45 +2900,9 @@
                         }
                       ]
                     },
-                    "Role": 3
+                    "Role": 2
                   },
-                  "Rate": 8,
-                  "Range": {
-                    "Min": 0,
-                    "Max": 5
-                  }
-                },
-                {
-                  "Spawn": {
-                    "Spawn": {
-                      "BaseForm": {
-                        "Species": "naclstack",
-                        "Form": 0,
-                        "Skin": "",
-                        "Gender": -1
-                      },
-                      "Level": {
-                        "Min": 31,
-                        "Max": 33
-                      },
-                      "SpecifiedSkills": [
-                        "salt_cure",
-                        "recover",
-                        "headbutt",
-                        "iron_defense"
-                      ],
-                      "Intrinsic": "purifying_salt",
-                      "Tactic": "wander_dumb_itemless",
-                      "SpawnConditions": [],
-                      "SpawnFeatures": [
-                        {
-                          "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-                        }
-                      ]
-                    },
-                    "Role": 3
-                  },
-                  "Rate": 8,
+                  "Rate": 2,
                   "Range": {
                     "Min": 0,
                     "Max": 5
@@ -2896,7 +2936,7 @@
                 },
                 {
                   "Spawn": 3,
-                  "Rate": 6,
+                  "Rate": 4,
                   "Range": {
                     "Min": 2,
                     "Max": 5
@@ -3119,8 +3159,8 @@
               "SpreadPlan": {
                 "$type": "RogueEssence.LevelGen.SpreadPlanSpaced, RogueEssence",
                 "FloorSpacing": {
-                  "Min": 2,
-                  "Max": 5
+                  "Min": 1,
+                  "Max": 4
                 },
                 "BeginStart": false,
                 "FloorRange": {
@@ -3468,8 +3508,8 @@
                     "$type": "PMDC.LevelGen.MobThemeNone, PMDC",
                     "SpecialRatio": 40,
                     "Amount": {
-                      "Min": 7,
-                      "Max": 13
+                      "Min": 6,
+                      "Max": 9
                     }
                   },
                   "Rate": 10,
@@ -3507,9 +3547,9 @@
               ],
               "SpreadPlan": {
                 "$type": "RogueEssence.LevelGen.SpreadPlanChance, RogueEssence",
-                "Chance": 20,
+                "Chance": 15,
                 "FloorRange": {
-                  "Min": 0,
+                  "Min": 1,
                   "Max": 5
                 }
               },
