@@ -99,7 +99,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 136,
+"HP": 138,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -190,7 +190,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 33,
+"Level": 34,
 "EXP": 0,
 "MaxHPBonus": 100,
 "AtkBonus": 0,
@@ -347,7 +347,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 123,
+"HP": 125,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -443,7 +443,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 31,
+"Level": 32,
 "EXP": 0,
 "MaxHPBonus": 70,
 "AtkBonus": 0,
@@ -600,7 +600,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 111,
+"HP": 113,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -696,7 +696,7 @@
 "Skin": "normal",
 "Gender": 2
 },
-"Level": 31,
+"Level": 32,
 "EXP": 0,
 "MaxHPBonus": 70,
 "AtkBonus": 0,
@@ -853,7 +853,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 144,
+"HP": 146,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -953,7 +953,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 31,
+"Level": 32,
 "EXP": 0,
 "MaxHPBonus": 70,
 "AtkBonus": 0,
@@ -1058,8 +1058,8 @@
 "Skills": [
 {
 "Element": {
-"SkillNum": "stealth_rock",
-"Charges": 20,
+"SkillNum": "sandstorm",
+"Charges": 10,
 "Enabled": true,
 "Sealed": false
 },
@@ -1110,7 +1110,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 120,
+"HP": 122,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1120,19 +1120,30 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Itemless Normal Wander",
+"DefaultText": "Smart Wander",
 "LocalTexts": {}
 },
 "Released": false,
 "Comment": "",
-"ID": "wander_normal_itemless",
+"ID": "wander_smart",
 "Assignable": false,
 "Plans": [
 {
+"$type": "PMDC.Dungeon.PreBuffPlan, PMDC",
+"FirstMoveStatus": "last_used_move_slot",
+"IQ": 108,
+"RestrictedMobilityTypes": 0,
+"RestrictMobilityPassable": false,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 0,
+"AbandonRangeOnHit": true
+},
+{
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 2,
-"PositionPattern": 1,
-"IQ": 96,
+"AttackPattern": 4,
+"PositionPattern": 2,
+"IQ": 108,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1142,7 +1153,7 @@
 },
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 224,
+"IQ": 236,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1152,7 +1163,7 @@
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 224,
+"IQ": 236,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1162,7 +1173,7 @@
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 224,
+"IQ": 236,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1206,7 +1217,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 31,
+"Level": 32,
 "EXP": 0,
 "MaxHPBonus": 70,
 "AtkBonus": 0,
@@ -1216,8 +1227,8 @@
 "SpeedBonus": 0,
 "BaseSkills": [
 {
-"SkillNum": "stealth_rock",
-"Charges": 20,
+"SkillNum": "sandstorm",
+"Charges": 10,
 "CanForget": true
 },
 {
@@ -1363,7 +1374,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 77,
+"HP": 78,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1373,29 +1384,29 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Itemless Dumb Wander",
+"DefaultText": "Itemless Normal Wander",
 "LocalTexts": {}
 },
 "Released": false,
 "Comment": "",
-"ID": "wander_dumb_itemless",
+"ID": "wander_normal_itemless",
 "Assignable": false,
 "Plans": [
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 32,
+"AttackPattern": 2,
+"PositionPattern": 1,
+"IQ": 96,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
-"AttackRange": 4,
-"StatusRange": 4,
-"SelfStatusRange": 3,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4,
 "AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1405,7 +1416,7 @@
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1415,7 +1426,7 @@
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1463,7 +1474,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 30,
+"Level": 31,
 "EXP": 0,
 "MaxHPBonus": 20,
 "AtkBonus": 0,
@@ -1620,7 +1631,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 77,
+"HP": 78,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1630,29 +1641,29 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Itemless Dumb Wander",
+"DefaultText": "Itemless Normal Wander",
 "LocalTexts": {}
 },
 "Released": false,
 "Comment": "",
-"ID": "wander_dumb_itemless",
+"ID": "wander_normal_itemless",
 "Assignable": false,
 "Plans": [
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 32,
+"AttackPattern": 2,
+"PositionPattern": 1,
+"IQ": 96,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
-"AttackRange": 4,
-"StatusRange": 4,
-"SelfStatusRange": 3,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4,
 "AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1662,7 +1673,7 @@
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1672,7 +1683,7 @@
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1720,7 +1731,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 30,
+"Level": 31,
 "EXP": 0,
 "MaxHPBonus": 20,
 "AtkBonus": 0,
@@ -1877,7 +1888,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 77,
+"HP": 78,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -1887,29 +1898,29 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Itemless Dumb Wander",
+"DefaultText": "Itemless Normal Wander",
 "LocalTexts": {}
 },
 "Released": false,
 "Comment": "",
-"ID": "wander_dumb_itemless",
+"ID": "wander_normal_itemless",
 "Assignable": false,
 "Plans": [
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 32,
+"AttackPattern": 2,
+"PositionPattern": 1,
+"IQ": 96,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
-"AttackRange": 4,
-"StatusRange": 4,
-"SelfStatusRange": 3,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4,
 "AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1919,7 +1930,7 @@
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1929,7 +1940,7 @@
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -1977,7 +1988,7 @@
 "Skin": "normal",
 "Gender": 1
 },
-"Level": 30,
+"Level": 31,
 "EXP": 0,
 "MaxHPBonus": 20,
 "AtkBonus": 0,
@@ -2134,7 +2145,7 @@
 },
 "Absentee": false,
 "ChargeBoost": 0,
-"HP": 77,
+"HP": 78,
 "HPRemainder": 0,
 "Fullness": 100,
 "FullnessRemainder": 0,
@@ -2144,29 +2155,29 @@
 "EXPMarked": false,
 "Tactic": {
 "Name": {
-"DefaultText": "Itemless Dumb Wander",
+"DefaultText": "Itemless Normal Wander",
 "LocalTexts": {}
 },
 "Released": false,
 "Comment": "",
-"ID": "wander_dumb_itemless",
+"ID": "wander_normal_itemless",
 "Assignable": false,
 "Plans": [
 {
 "$type": "PMDC.Dungeon.AttackFoesPlan, PMDC",
-"AttackPattern": 1,
-"PositionPattern": 0,
-"IQ": 32,
+"AttackPattern": 2,
+"PositionPattern": 1,
+"IQ": 96,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
-"AttackRange": 4,
-"StatusRange": 4,
-"SelfStatusRange": 3,
+"AttackRange": 0,
+"StatusRange": 0,
+"SelfStatusRange": 4,
 "AbandonRangeOnHit": true
 },
 {
 "$type": "PMDC.Dungeon.FollowLeaderPlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -2176,7 +2187,7 @@
 },
 {
 "$type": "PMDC.Dungeon.ExplorePlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -2186,7 +2197,7 @@
 },
 {
 "$type": "PMDC.Dungeon.WaitPlan, PMDC",
-"IQ": 160,
+"IQ": 224,
 "RestrictedMobilityTypes": 0,
 "RestrictMobilityPassable": false,
 "AttackRange": 0,
@@ -2234,7 +2245,7 @@
 "Skin": "normal",
 "Gender": 2
 },
-"Level": 30,
+"Level": 31,
 "EXP": 0,
 "MaxHPBonus": 20,
 "AtkBonus": 0,

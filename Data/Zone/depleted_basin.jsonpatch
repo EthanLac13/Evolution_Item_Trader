@@ -1448,12 +1448,12 @@
                         "Spawn": {
                           "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
                           "Amount": {
-                            "Min": 5,
-                            "Max": 8
+                            "Min": 6,
+                            "Max": 9
                           }
                         },
                         "Ally": false,
-                        "ClumpFactor": 30
+                        "ClumpFactor": 20
                       }
                     }
                   ],
@@ -1539,12 +1539,26 @@
                         "Min": 0,
                         "Max": 9
                       }
+                    },
+                    {
+                      "Spawn": {
+                        "ID": "berry_leppa",
+                        "Cursed": false,
+                        "HiddenValue": "",
+                        "Amount": 0,
+                        "Price": 0
+                      },
+                      "Rate": 9,
+                      "Range": {
+                        "Min": 0,
+                        "Max": 9
+                      }
                     }
                   ],
                   "SpawnRates": {
                     "nodes": [
                       {
-                        "Item": 3,
+                        "Item": 6,
                         "Range": {
                           "Min": 0,
                           "Max": 9
@@ -1887,49 +1901,6 @@
                         "Price": 0
                       },
                       "Rate": 1,
-                      "Range": {
-                        "Min": 0,
-                        "Max": 9
-                      }
-                    }
-                  ],
-                  "SpawnRates": {
-                    "nodes": [
-                      {
-                        "Item": 3,
-                        "Range": {
-                          "Min": 0,
-                          "Max": 9
-                        }
-                      }
-                    ]
-                  }
-                },
-                "special": {
-                  "Spawns": [
-                    {
-                      "Spawn": {
-                        "ID": "key",
-                        "Cursed": true,
-                        "HiddenValue": "",
-                        "Amount": 1,
-                        "Price": 0
-                      },
-                      "Rate": 3,
-                      "Range": {
-                        "Min": 0,
-                        "Max": 9
-                      }
-                    },
-                    {
-                      "Spawn": {
-                        "ID": "key",
-                        "Cursed": false,
-                        "HiddenValue": "",
-                        "Amount": 1,
-                        "Price": 0
-                      },
-                      "Rate": 7,
                       "Range": {
                         "Min": 0,
                         "Max": 9
@@ -2533,15 +2504,15 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 27,
-                        "Max": 28
+                        "Min": 28,
+                        "Max": 29
                       },
                       "SpecifiedSkills": [
                         "slash",
                         "dual_chop"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb_itemless",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2582,7 +2553,7 @@
                         "poison_fang"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb_itemless",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2592,7 +2563,7 @@
                     },
                     "Role": 0
                   },
-                  "Rate": 10,
+                  "Rate": 8,
                   "Range": {
                     "Min": 0,
                     "Max": 5
@@ -2617,7 +2588,7 @@
                         "astonish"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb_itemless",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2648,8 +2619,8 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 30,
-                        "Max": 31
+                        "Min": 31,
+                        "Max": 32
                       },
                       "SpecifiedSkills": [
                         "dragon_breath",
@@ -2657,28 +2628,11 @@
                         "ember"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb_itemless",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
                           "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-                        },
-                        {
-                          "$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
-                          "Statuses": [
-                            {
-                              "Spawn": {
-                                "ID": "sleep",
-                                "StatusStates": [
-                                  {
-                                    "$type": "RogueEssence.Dungeon.CountDownState, RogueEssence",
-                                    "Counter": -1
-                                  }
-                                ]
-                              },
-                              "Rate": 10
-                            }
-                          ]
                         },
                         {
                           "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
@@ -2689,66 +2643,9 @@
                     },
                     "Role": 0
                   },
-                  "Rate": 1,
+                  "Rate": 6,
                   "Range": {
                     "Min": 0,
-                    "Max": 2
-                  }
-                },
-                {
-                  "Spawn": {
-                    "Spawn": {
-                      "BaseForm": {
-                        "Species": "shelgon",
-                        "Form": 0,
-                        "Skin": "",
-                        "Gender": -1
-                      },
-                      "Level": {
-                        "Min": 30,
-                        "Max": 31
-                      },
-                      "SpecifiedSkills": [
-                        "dragon_breath",
-                        "protect",
-                        "ember"
-                      ],
-                      "Intrinsic": "",
-                      "Tactic": "wander_dumb_itemless",
-                      "SpawnConditions": [],
-                      "SpawnFeatures": [
-                        {
-                          "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-                        },
-                        {
-                          "$type": "RogueEssence.LevelGen.MobSpawnStatus, RogueEssence",
-                          "Statuses": [
-                            {
-                              "Spawn": {
-                                "ID": "sleep",
-                                "StatusStates": [
-                                  {
-                                    "$type": "RogueEssence.Dungeon.CountDownState, RogueEssence",
-                                    "Counter": -1
-                                  }
-                                ]
-                              },
-                              "Rate": 10
-                            }
-                          ]
-                        },
-                        {
-                          "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-                          "StartAt": 3,
-                          "Remove": false
-                        }
-                      ]
-                    },
-                    "Role": 0
-                  },
-                  "Rate": 3,
-                  "Range": {
-                    "Min": 2,
                     "Max": 5
                   }
                 },
@@ -2771,7 +2668,7 @@
                         "ancient_power"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb_itemless",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2812,7 +2709,7 @@
                         "iron_defense"
                       ],
                       "Intrinsic": "purifying_salt",
-                      "Tactic": "wander_dumb_itemless",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2838,8 +2735,8 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 32,
-                        "Max": 33
+                        "Min": 33,
+                        "Max": 34
                       },
                       "SpecifiedSkills": [
                         "scary_face",
@@ -2847,7 +2744,7 @@
                         "dual_chop"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb_itemless",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2862,7 +2759,7 @@
                     },
                     "Role": 2
                   },
-                  "Rate": 2,
+                  "Rate": 3,
                   "Range": {
                     "Min": 0,
                     "Max": 5
@@ -2878,8 +2775,8 @@
                         "Gender": -1
                       },
                       "Level": {
-                        "Min": 32,
-                        "Max": 33
+                        "Min": 33,
+                        "Max": 34
                       },
                       "SpecifiedSkills": [
                         "howl",
@@ -2887,7 +2784,7 @@
                         "astonish"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_dumb_itemless",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -2902,7 +2799,7 @@
                     },
                     "Role": 2
                   },
-                  "Rate": 2,
+                  "Rate": 4,
                   "Range": {
                     "Min": 0,
                     "Max": 5
@@ -2928,14 +2825,6 @@
                 },
                 {
                   "Spawn": 2,
-                  "Rate": 4,
-                  "Range": {
-                    "Min": 2,
-                    "Max": 5
-                  }
-                },
-                {
-                  "Spawn": 3,
                   "Rate": 4,
                   "Range": {
                     "Min": 2,
@@ -3491,7 +3380,7 @@
                     "SpecialRatio": 40,
                     "Amount": {
                       "Min": 4,
-                      "Max": 6
+                      "Max": 7
                     }
                   },
                   "Rate": 30,
