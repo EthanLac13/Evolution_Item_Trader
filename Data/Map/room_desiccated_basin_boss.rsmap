@@ -65,8 +65,8 @@
 },
 {
 "Element": {
-"SkillNum": "dark_pulse",
-"Charges": 15,
+"SkillNum": "nature_power",
+"Charges": 20,
 "Enabled": true,
 "Sealed": false
 },
@@ -74,8 +74,8 @@
 },
 {
 "Element": {
-"SkillNum": "bullet_seed",
-"Charges": 15,
+"SkillNum": "seed_bomb",
+"Charges": 10,
 "Enabled": true,
 "Sealed": false
 },
@@ -210,13 +210,13 @@
 "CanForget": true
 },
 {
-"SkillNum": "dark_pulse",
-"Charges": 15,
+"SkillNum": "nature_power",
+"Charges": 20,
 "CanForget": true
 },
 {
-"SkillNum": "bullet_seed",
-"Charges": 15,
+"SkillNum": "seed_bomb",
+"Charges": 10,
 "CanForget": true
 }
 ],
