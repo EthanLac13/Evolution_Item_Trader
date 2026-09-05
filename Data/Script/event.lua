@@ -1,0 +1,1 @@
+require 'evolution_item_trader.event_battle'
