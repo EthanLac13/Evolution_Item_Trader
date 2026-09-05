@@ -479,9 +479,13 @@ function desiccated_basin_cutscene.InitialCutscene(map)
 	local mon_id = RogueEssence.Dungeon.MonsterID("glaceon", 0, "normal", Gender.Female)
 	local glaceon = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 35, "snow_cloak", 0)
 	glaceon.Discriminator = _DATA.Save.Rand:Next()
-	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("AllyInteract")
+	
+	-- Give her the custom interact script
+	glaceon.ActionEvents:RemoveAt(0)
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EvoTraderGlaceonInteract")
 	glaceon.ActionEvents:Add(talk_evt)
 	
+	-- Set level and moves
 	glaceon.Level = 35
 	glaceon.IsPartner = false
 	glaceon.MaxHPBonus = 20
@@ -615,9 +619,13 @@ function desiccated_basin_cutscene.ReturnCutscene(map)
 	local mon_id = RogueEssence.Dungeon.MonsterID("glaceon", 0, "normal", Gender.Female)
 	local glaceon = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 35, "snow_cloak", 0)
 	glaceon.Discriminator = _DATA.Save.Rand:Next()
-	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("AllyInteract")
+	
+	-- Give her the custom interact script
+	glaceon.ActionEvents:RemoveAt(0)
+	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EvoTraderGlaceonInteract")
 	glaceon.ActionEvents:Add(talk_evt)
 	
+	-- Set level and moves
 	glaceon.Level = 35
 	glaceon.IsPartner = false
 	glaceon.MaxHPBonus = 20

@@ -1,2 +1,0 @@
-require 'evolution_item_trader.event_battle'
-require 'evolution_item_trader.event_single'
