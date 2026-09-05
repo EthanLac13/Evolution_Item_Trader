@@ -7,7 +7,8 @@ function SINGLE_CHAR_SCRIPT.SpawnDesiccatedBasinAllies(owner, ownerChar, context
 		local mon_id = RogueEssence.Dungeon.MonsterID("glaceon", 0, "normal", Gender.Female)
 		local glaceon = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 35, "snow_cloak", 0)
 		glaceon.Discriminator = _DATA.Save.Rand:Next()
-		local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("AllyInteract")
+		glaceon.ActionEvents:RemoveAt(0)
+		local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EvoTraderGlaceonInteract")
 		glaceon.ActionEvents:Add(talk_evt)
 		
 		glaceon.Level = 35
