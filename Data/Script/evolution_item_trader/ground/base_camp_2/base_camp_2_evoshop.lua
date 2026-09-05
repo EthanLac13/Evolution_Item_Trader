@@ -15,7 +15,7 @@ local items_to_buy = {
 	{ Index = "evo_electirizer", Amount = 1, Price = 21},
 	{ Index = "evo_fire_stone", Amount = 1, Price = 15},
 	{ Index = "held_hard_stone", Amount = 1, Price = 18},
-	{ Index = "evo_harmony_scarf", Amount = 1, Price = 99},
+	{ Index = "evo_harmony_scarf", Amount = 1, Price = 50},
 	{ Index = "evo_ice_stone", Amount = 1, Price = 15},
 	{ Index = "evo_kings_rock", Amount = 1, Price = 18},
 	{ Index = "evo_leaf_stone", Amount = 1, Price = 15},
