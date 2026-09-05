@@ -1448,8 +1448,8 @@
                         "Spawn": {
                           "$type": "RogueEssence.LevelGen.TeamContextSpawner`1[[RogueEssence.LevelGen.MapGenContext, RogueEssence]], RogueEssence",
                           "Amount": {
-                            "Min": 6,
-                            "Max": 9
+                            "Min": 7,
+                            "Max": 10
                           }
                         },
                         "Ally": false,
@@ -2741,19 +2741,15 @@
                       "SpecifiedSkills": [
                         "scary_face",
                         "slash",
-                        "dual_chop"
+                        "dual_chop",
+                        "dragon_dance"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_normal_itemless",
+                      "Tactic": "wander_smart",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
                           "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
-                        },
-                        {
-                          "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
-                          "StartAt": 3,
-                          "Remove": false
                         }
                       ]
                     },
@@ -2784,7 +2780,7 @@
                         "astonish"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_normal_itemless",
+                      "Tactic": "wander_smart",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
@@ -3436,7 +3432,7 @@
               ],
               "SpreadPlan": {
                 "$type": "RogueEssence.LevelGen.SpreadPlanChance, RogueEssence",
-                "Chance": 15,
+                "Chance": 35,
                 "FloorRange": {
                   "Min": 1,
                   "Max": 5
