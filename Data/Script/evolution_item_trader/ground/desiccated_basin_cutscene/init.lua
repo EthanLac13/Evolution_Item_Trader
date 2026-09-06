@@ -481,9 +481,13 @@ function desiccated_basin_cutscene.InitialCutscene(map)
 	glaceon.Discriminator = _DATA.Save.Rand:Next()
 	
 	-- Give her the custom interact script
+	print(glaceon.ActionEvents[0].Script)
 	glaceon.ActionEvents:RemoveAt(0)
+	print(glaceon.ActionEvents.Count)
 	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EvoTraderGlaceonInteract")
 	glaceon.ActionEvents:Add(talk_evt)
+	print(glaceon.ActionEvents.Count)
+	print(glaceon.ActionEvents[0].Script)
 	
 	-- Set level and moves
 	glaceon.Level = 35

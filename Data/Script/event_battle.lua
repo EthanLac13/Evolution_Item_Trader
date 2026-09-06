@@ -2,6 +2,8 @@ require 'origin.common'
 
 -- Thanks to Palika for this code
 function BATTLE_SCRIPT.EvoTraderGlaceonInteract(owner, ownerChar, context, args)
+	print("Script executed")
+	
 	local chara = context.User
 	local target = context.Target
 	local action_cancel = context.CancelState
