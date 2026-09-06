@@ -21,12 +21,13 @@ function BATTLE_SCRIPT.EvoTraderGlaceonInteract(owner, ownerChar, context, args)
 		
 		if ratio <= 25 then
 			UI:SetSpeakerEmotion("Pain")
-			talk_string = "[tmp] Glaceon Low HP"
+			talk_string = "No...[pause=0] No...!"
 		elseif ratio <= 50 then
-			UI:SetSpeakerEmotion("Worried")
-			talk_string = "[tmp] Glaceon Half HP"
+			UI:SetSpeakerEmotion("Determined")
+			talk_string = "These guys are tough,[pause=10] but I won't give up!"
 		else
-			talk_string = "[tmp] Glaceon Full HP"
+			UI:SetSpeakerEmotion("Angry")
+			talk_string = "I'll back you up![pause=20] Let's make these guys pay!"
 		end
 		
 		local oldDir = target.CharDir
