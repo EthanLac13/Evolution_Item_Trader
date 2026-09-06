@@ -689,7 +689,12 @@ function base_camp_2_evoshop.Interact_ItemBuyer(obj, activator)
 					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Buyer_Bag_Empty']))
 				end
 			elseif result == 2 then
-				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Buyer_Info']))
+				if SV.ModData_EvolutionItemTrader.Buyer_Info == nil then
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Buyer_Info_First']))
+					SV.ModData_EvolutionItemTrader.Buyer_Info = true
+				else
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Buyer_Info']))
+				end
 			else
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Buyer_Goodbye']))
 				state = -1
@@ -784,7 +789,12 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Buy'], STRINGS:LocalKeyString(26)))
 				state = 1
 			elseif result == 2 then
-				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info']))
+				if SV.ModData_EvolutionItemTrader.Seller_Info == nil then
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info_First']))
+					SV.ModData_EvolutionItemTrader.Seller_Info = true
+				else
+					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Info']))
+				end
 			else
 				UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Goodbye']))
 				state = -1
@@ -795,7 +805,7 @@ function base_camp_2_evoshop.Interact_ItemSeller(obj, activator)
 				local bag_count = GAME:GetPlayerBagCount() + GAME:GetPlayerEquippedCount()
 				local bag_cap = GAME:GetPlayerBagLimit()
 				if bag_count == bag_cap then
-					UI:SetSpeakerEmotion("Angry")
+					UI:SetSpeakerEmotion("Worried")
 					UI:WaitShowDialogue(STRINGS:Format(STRINGS.MapStrings['Evoshop_Seller_Bag_Full']))
 					UI:SetSpeakerEmotion("Normal")
 				else

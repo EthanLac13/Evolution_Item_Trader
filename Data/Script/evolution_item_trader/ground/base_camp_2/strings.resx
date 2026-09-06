@@ -118,112 +118,74 @@
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
 	
-	<data name="Evoshop_Quest_Intro" xml:space="preserve">
-		<value>[tmp] Go rescue Eevee from Depleted Basin.[br][tmp] I mention that I want to get an Ice Stone and evolve into Glaceon.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Given" xml:space="preserve">
-		<value>[tmp] I'm waiting for you to rescue Eevee from Depleted Basin.</value>
-		<comment></comment>	</data>
-	
-	<data name="Evoshop_Quest_Complete_Brother_1" xml:space="preserve">
-		<value>[emote=Surprised]Wow! And y</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Sister_1" xml:space="preserve">
-		<value>[tmp] I mention that I had to use the Ice Stone to evolve and fend off wild Pokémon.[br][emote=Sad][tmp] I apologize for having used it.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Brother_2" xml:space="preserve">
-		<value>[tmp] I say it's okay, and that it's better for you to have used it and survived.[br][tmp] I ask if you have any other evolution stones.[br][emote=Sad][tmp] I say that I don't want you to have to go back to Depleted Basin and risk your life to get me an Ice Stone.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Sister_2" xml:space="preserve">
-		<value>[emote=Worried][tmp] I say that I have a few, including a Fire Stone.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Brother_3" xml:space="preserve">
-		<value>[tmp] I ask you to give me the Fire Stone.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Brother_4" xml:space="preserve">
-		<value>[tmp] I say that I am a Flareon now.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Brother_5" xml:space="preserve">
-		<value>[tmp] I thank the player for having rescued my sister.[br][emote=Sad][tmp] I lament that we're now stuck as the wrong Eeveelutions.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Sister_3" xml:space="preserve">
-		<value>[tmp] I propose that we find a way to prevent what happened to us from happening to other Pokémon.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Brother_6" xml:space="preserve">
-		<value>[emote=Worried][tmp] I ask what she means.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Sister_4" xml:space="preserve">
-		<value>[tmp] I say that we trade evolution items with other Pokémon so they get the ones they need.</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Quest_Complete_Brother_7" xml:space="preserve">
-		<value>[emote=Happy][tmp] I agree and say that the Evolution Swap Shop is now open for business.</value>
-		<comment></comment>	</data>
-	
 	<data name="Evoshop_Buyer_Intro" xml:space="preserve">
-		<value>[tmp] I'll buy your evolution items and give you Heart Scales.</value>
+		<value>Welcome to the Evo Shop! Got any evolution items for us?</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Buyer_Intro_Return" xml:space="preserve">
-		<value>[tmp] I'll buy your evolution items and give you Heart Scales. (Return)</value>
+		<value>Got anything else for us?</value>
 		<comment></comment>	</data>
 	
 	<data name="Evoshop_Buyer_Bag_Empty" xml:space="preserve">
-		<value>[tmp] Oh?[pause=0] Nothing to sell?</value>
-		<comment></comment>	</data>
-	<data name="Evoshop_Buyer_Bag_Full" xml:space="preserve">
-		<value>[tmp] Oh![pause=0] You have no more space for items!</value>
+		<value>Oh? Seems like you've got nothing to sell.</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Buyer_Goodbye" xml:space="preserve">
-		<value>[tmp] Thanks! \u266A Please come again \u266A</value>
+		<value>Thank you! Please come again with more evolution items!</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Buyer_Info_First" xml:space="preserve">
+		<value>Now that we've set up the shop, I'll buy evolution items off of you.[br]I'll give you 3 [color=#FFCEFF]Heart Scales[color] for each one you give me.[br]Then, you can trade them to my sister to buy the evolution items you want!</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Buyer_Info" xml:space="preserve">
-		<value>[tmp] I'll give you 3 Heart Scales for each evolution item you give me.</value>
+		<value>I'll give you 3 [color=#FFCEFF]Heart Scales[color] for each evolution item you give me.[br]Then, you can trade them to my sister to buy the evolution items you want!</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Buyer_Option_Sell" xml:space="preserve">
 		<value>Sell</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Buyer_Sell" xml:space="preserve">
-		<value>[tmp] Very well! What will you sell? (You can use {0} to choose multiple items.)</value>
+		<value>All right, what do you have for me? (You can use {0} to choose multiple items.)</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Buyer_Sell_Complete" xml:space="preserve">
-		<value>[tmp] Done deal! Thank you~\u266A</value>
+		<value>Thank you! Here's your [color=#FFCEFF]Heart Scales[color].</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Buyer_Sell_Multi" xml:space="preserve">
-		<value>[tmp] I can give you {0} Heart Scales for all that.</value>
+		<value>I can give you {0} [color=#FFCEFF]Heart Scales[color] for all that. Sound good?</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Buyer_Sell_One" xml:space="preserve">
-		<value>[tmp] I can give you {0} Heart Scales for that {1}.</value>
+		<value>I can give you {0} [color=#FFCEFF]Heart Scales[color] for that {1}. Sound good?</value>
 		<comment></comment>	</data>
 
 	<data name="Evoshop_Seller_Intro" xml:space="preserve">
-		<value>[tmp] I'll sell you evolution items in exchange for Heart Scales.</value>
+		<value>Welcome to the Evo Shop! We've got all the evolution items you want!</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Intro_Return" xml:space="preserve">
-		<value>[tmp] I'll sell you evolution items in exchange for Heart Scales. (Return)</value>
+		<value>Anything else you'd like to purchase?</value>
 		<comment></comment>	</data>
 	
 	<data name="Evoshop_Seller_Bag_Full" xml:space="preserve">
-		<value>[tmp] Oh![pause=0] You have no more space for items!</value>
+		<value>How are you going to fit all that in your bag?</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Buy" xml:space="preserve">
-		<value>[tmp] Very well![pause=0] Feel free to examine my merchandise! (You can use {0} to choose multiple items.)</value>
+		<value>All right, what do you want? (You can use {0} to choose multiple items.)</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Buy_Complete" xml:space="preserve">
-		<value>[tmp] Thank you! All yours~</value>
+		<value>Thank you! I'll take these [color=#FFCEFF]Heart Scales[color].</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Buy_Multi" xml:space="preserve">
-		<value>[tmp] Altogether, that comes to [color=#00FFFF]{0}[color] Heart Scales. Is that OK?</value>
+		<value>Altogether, those will be [color=#00FFFF]{0}[color] [color=#FFCEFF]Heart Scales[color].</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Buy_No_Money" xml:space="preserve">
-		<value>[tmp] What?[pause=0] You don't seem to have the money.</value>
+		<value>Hey! You don't have enough [color=#FFCEFF]Heart Scales[color] for all that!</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Buy_One" xml:space="preserve">
-		<value>[tmp] That {1}? That will be [color=#00FFFF]{0}[color] Heart Scales.</value>
+		<value>That {1} will be [color=#00FFFF]{0}[color] [color=#FFCEFF]Heart Scales[color].</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Goodbye" xml:space="preserve">
-		<value>[tmp] Thanks! \u266A Please come again \u266A</value>
+		<value>Thank you! Come back when you need more evolution items.</value>
+		<comment></comment>	</data>
+	<data name="Evoshop_Seller_Info_First" xml:space="preserve">
+		<value>We've managed to buy lots of evolution items off of other Pokémon who don't need them.[br]We need [color=#FFCEFF]Heart Scales[color] to learn moves, so we'll give you evolution items for them.[br]If you need more [color=#FFCEFF]Heart Scales[color], search dungeons for evolution items and trade them to my little brother.[br]If [color=#00FFFF]Cacturne[color] ever defrosts, he's going to have a nasty surprise if he tries anything on us!</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Info" xml:space="preserve">
-		<value>[tmp] I'll sell you evolution items for varying amounts of Heart Scales.[br][tmp] Items used by more Pokémon are cheaper to buy.</value>
+		<value>I'll sell you evolution items in exchange for [color=#FFCEFF]Heart Scales[color].[br]If you need more [color=#FFCEFF]Heart Scales[color], search dungeons for evolution items and trade them to my little brother.</value>
 		<comment></comment>	</data>
 	<data name="Evoshop_Seller_Option_Buy" xml:space="preserve">
 		<value>Buy</value>
