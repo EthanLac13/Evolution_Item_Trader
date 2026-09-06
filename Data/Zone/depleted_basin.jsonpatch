@@ -2826,6 +2826,14 @@
                     "Min": 2,
                     "Max": 5
                   }
+                },
+                {
+                  "Spawn": 3,
+                  "Rate": 4,
+                  "Range": {
+                    "Min": 2,
+                    "Max": 5
+                  }
                 }
               ],
               "SpecificSpawns": []
@@ -3372,14 +3380,165 @@
               "ItemThemes": [
                 {
                   "Spawn": {
-                    "$type": "PMDC.LevelGen.ItemThemeNone, PMDC",
-                    "SpecialRatio": 40,
+                    "$type": "PMDC.LevelGen.ItemThemeDirect, PMDC",
+                    "DirectList": [
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_fire_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_thunder_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_water_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_leaf_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_moon_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_sun_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_shiny_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_dusk_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_ice_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      },
+                      {
+                        "Spawn": {
+                          "IsMoney": false,
+                          "Cursed": false,
+                          "Value": "evo_dawn_stone",
+                          "HiddenValue": "",
+                          "Amount": 0,
+                          "Price": 0,
+                          "TileLoc": {
+                            "X": 0,
+                            "Y": 0
+                          }
+                        },
+                        "Rate": 10
+                      }
+                    ],
                     "Amount": {
-                      "Min": 4,
-                      "Max": 7
+                      "Min": 5,
+                      "Max": 8
                     }
                   },
-                  "Rate": 30,
+                  "Rate": 100,
                   "Range": {
                     "Min": 0,
                     "Max": 5
@@ -3393,8 +3552,8 @@
                     "$type": "PMDC.LevelGen.MobThemeNone, PMDC",
                     "SpecialRatio": 40,
                     "Amount": {
-                      "Min": 6,
-                      "Max": 9
+                      "Min": 5,
+                      "Max": 8
                     }
                   },
                   "Rate": 10,
