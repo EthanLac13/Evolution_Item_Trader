@@ -2784,7 +2784,7 @@
                         "astonish"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_smart",
+                      "Tactic": "wander_normal_itemless",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
