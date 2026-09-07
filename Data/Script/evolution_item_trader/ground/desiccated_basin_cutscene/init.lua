@@ -485,18 +485,33 @@ function desiccated_basin_cutscene.InitialCutscene(map)
 	GAME:WaitFrames(10)
 	
 	-- Add Glaceon to the player's party
+	desiccated_basin_cutscene.AddGlaceonToParty()
+	
+	-- Set boss as encountered
+	if SV.ModData_EvolutionItemTrader ~= nil then
+		SV.ModData_EvolutionItemTrader.Boss_Encountered = true
+	end
+  
+	-- Boss battle begins
+	COMMON.BossTransition(true)
+
+	GAME:CutsceneMode(false)
+
+	GAME:ContinueDungeon('depleted_basin', 6, 0, 0)
+	
+
+end
+
+function desiccated_basin_cutscene.AddGlaceonToParty()
+	
+	-- Add Glaceon to the player's party
 	local mon_id = RogueEssence.Dungeon.MonsterID("glaceon", 0, "normal", Gender.Female)
 	local glaceon = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 35, "snow_cloak", 0)
 	glaceon.Discriminator = _DATA.Save.Rand:Next()
 	
 	-- Give her the custom interact script
-	print(glaceon.ActionEvents.Count)
-	--print(glaceon.ActionEvents[0].Script)
-	--glaceon.ActionEvents:RemoveAt(0)
 	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EvoTraderGlaceonInteract")
 	glaceon.ActionEvents:Add(talk_evt)
-	print(glaceon.ActionEvents.Count)
-	print(glaceon.ActionEvents[0].Script)
 	
 	-- Set level and moves
 	glaceon.Level = 35
@@ -513,23 +528,14 @@ function desiccated_basin_cutscene.InitialCutscene(map)
 	glaceon:ReplaceSkill("barrier", 2, true)
 	glaceon:ReplaceSkill("sand_attack", 3, false)
 	
+	-- Set AI tactic to not be dumb
+	local tactic = _DATA:GetAITactic("go_after_foes")
+	glaceon.Tactic = RogueEssence.Data.AITactic(tactic)
+	
 	GAME:AddPlayerGuest(glaceon)
 	glaceon:FullRestore()
 	glaceon:RefreshTraits()
 	
-	-- Set boss as encountered
-	if SV.ModData_EvolutionItemTrader ~= nil then
-		SV.ModData_EvolutionItemTrader.Boss_Encountered = true
-	end
-  
-	-- Boss battle begins
-	COMMON.BossTransition(true)
-
-	GAME:CutsceneMode(false)
-
-	GAME:ContinueDungeon('depleted_basin', 6, 0, 0)
-	
-
 end
 
 -- Cutscene for if you lose and return
@@ -629,33 +635,7 @@ function desiccated_basin_cutscene.ReturnCutscene(map)
 	GAME:WaitFrames(10)
 	
 	-- Add Glaceon to the player's party
-	local mon_id = RogueEssence.Dungeon.MonsterID("glaceon", 0, "normal", Gender.Female)
-	local glaceon = _DATA.Save.ActiveTeam:CreatePlayer(_DATA.Save.Rand, mon_id, 35, "snow_cloak", 0)
-	glaceon.Discriminator = _DATA.Save.Rand:Next()
-	
-	-- Give her the custom interact script
-	glaceon.ActionEvents:RemoveAt(0)
-	local talk_evt = RogueEssence.Dungeon.BattleScriptEvent("EvoTraderGlaceonInteract")
-	glaceon.ActionEvents:Add(talk_evt)
-	
-	-- Set level and moves
-	glaceon.Level = 35
-	glaceon.IsPartner = false
-	glaceon.MaxHPBonus = 20
-	glaceon.AtkBonus = 20
-	glaceon.DefBonus = 20
-	glaceon.MAtkBonus = 20
-	glaceon.MDefBonus = 20
-	glaceon.SpeedBonus = 20
-	
-	glaceon:ReplaceSkill("icy_wind", 0, true)
-	glaceon:ReplaceSkill("helping_hand", 1, true)
-	glaceon:ReplaceSkill("barrier", 2, true)
-	glaceon:ReplaceSkill("sand_attack", 3, false)
-	
-	GAME:AddPlayerGuest(glaceon)
-	glaceon:FullRestore()
-	glaceon:RefreshTraits()
+	desiccated_basin_cutscene.AddGlaceonToParty()
 	
 	-- Set boss as encountered
 	if SV.ModData_EvolutionItemTrader ~= nil then
