@@ -2739,23 +2739,27 @@
                         "Max": 34
                       },
                       "SpecifiedSkills": [
-                        "scary_face",
+                        "dragon_dance",
                         "slash",
-                        "dual_chop",
-                        "dragon_dance"
+                        "dual_chop"
                       ],
                       "Intrinsic": "",
-                      "Tactic": "wander_smart",
+                      "Tactic": "wander_normal",
                       "SpawnConditions": [],
                       "SpawnFeatures": [
                         {
                           "$type": "PMDC.LevelGen.MobSpawnWeak, PMDC"
+                        },
+                        {
+                          "$type": "PMDC.LevelGen.MobSpawnMovesOff, PMDC",
+                          "StartAt": 3,
+                          "Remove": false
                         }
                       ]
                     },
                     "Role": 2
                   },
-                  "Rate": 3,
+                  "Rate": 4,
                   "Range": {
                     "Min": 0,
                     "Max": 5
