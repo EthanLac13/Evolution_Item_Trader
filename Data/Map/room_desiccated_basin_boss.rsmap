@@ -801,8 +801,8 @@
 "Skills": [
 {
 "Element": {
-"SkillNum": "rapid_spin",
-"Charges": 20,
+"SkillNum": "bulldoze",
+"Charges": 18,
 "Enabled": true,
 "Sealed": false
 },
@@ -963,8 +963,8 @@
 "SpeedBonus": 0,
 "BaseSkills": [
 {
-"SkillNum": "rapid_spin",
-"Charges": 20,
+"SkillNum": "bulldoze",
+"Charges": 18,
 "CanForget": true
 },
 {
