@@ -10,7 +10,6 @@ function base_camp_2.Init(map)
 	
 	-- Initialize save data
 	if SV.ModData_EvolutionItemTrader == nil then
-		print("Initializing savevars")
 		SV.ModData_EvolutionItemTrader = {
 			Initialized = true,
 			
@@ -20,8 +19,6 @@ function base_camp_2.Init(map)
 			Boss_Defeated = false,
 			Shopkeeper_Rescued = false
 		}
-	else
-		print("Savevars already initialized")
 	end
 	
 	-- Spawn NPCs
